@@ -1,0 +1,44 @@
+Bulk Seeding
+[
+  { "name": "Ravi Kumar", "tamilName": "ரவி குமார்", "address": "12 Gandhi Street", "city": "Chennai", "phone": "9876543210", "oldBalance": 1000.50, "currBalance": 500.25, "comm1": 20.00, "status": "ACTIVE" },
+  { "name": "Suresh Babu", "tamilName": "சுரேஷ் பாபு", "address": "45 Anna Nagar", "city": "Madurai", "phone": "9898765432", "oldBalance": 200.00, "currBalance": 300.00, "comm1": 15.00, "status": "ACTIVE" },
+  { "name": "Meena Lakshmi", "tamilName": "மீனா லக்ஷ்மி", "address": "77 Temple Road", "city": "Coimbatore", "phone": "9123456780", "oldBalance": 150.00, "currBalance": 50.00, "comm1": 10.00, "status": "INACTIVE" },
+  { "name": "Anand Raj", "tamilName": "ஆனந்த் ராஜ்", "address": "4 Park Street", "city": "Trichy", "phone": "9000000001", "oldBalance": 500.00, "currBalance": 250.00, "comm1": 5.00, "status": "ACTIVE" },
+  { "name": "Priya Devi", "tamilName": "ப்ரியா தேவி", "address": "10 MG Road", "city": "Salem", "phone": "9012345678", "oldBalance": 0.00, "currBalance": 100.00, "comm1": 12.00, "status": "ACTIVE" },
+  { "name": "Vignesh S", "tamilName": "விக்னேஷ்", "address": "23 Gandhi Nagar", "city": "Erode", "phone": "9988776655", "oldBalance": 300.00, "currBalance": 200.00, "comm1": 8.00, "status": "ACTIVE" },
+  { "name": "Deepa R", "tamilName": "தீபா", "address": "89 College Road", "city": "Vellore", "phone": "9876501234", "oldBalance": 50.00, "currBalance": 60.00, "comm1": 6.00, "status": "ACTIVE" },
+  { "name": "Manoj Kumar", "tamilName": "மனோஜ் குமார்", "address": "67 Market Street", "city": "Thanjavur", "phone": "9123901234", "oldBalance": 100.00, "currBalance": 20.00, "comm1": 5.00, "status": "INACTIVE" },
+  { "name": "Sandhya L", "tamilName": "சந்தியா", "address": "3 Raja Street", "city": "Karur", "phone": "9008765432", "oldBalance": 75.00, "currBalance": 25.00, "comm1": 7.00, "status": "ACTIVE" },
+  { "name": "Karthik P", "tamilName": "கார்த்திக்", "address": "11 North Street", "city": "Nagercoil", "phone": "9765432109", "oldBalance": 0.00, "currBalance": 0.00, "comm1": 3.00, "status": "ACTIVE" },
+  { "name": "Lakshmi Narayanan", "tamilName": "லட்சுமி நாராயணன்", "address": "22 South Street", "city": "Chennai", "phone": "9234567890", "oldBalance": 200.00, "currBalance": 150.00, "comm1": 9.00, "status": "ACTIVE" },
+  { "name": "Arun V", "tamilName": "அருண்", "address": "34 Gandhi Market", "city": "Madurai", "phone": "9345678901", "oldBalance": 10.00, "currBalance": 5.00, "comm1": 2.00, "status": "ACTIVE" },
+  { "name": "Swathi S", "tamilName": "ஸ்வாதி", "address": "8 Lake View Road", "city": "Coimbatore", "phone": "9456789012", "oldBalance": 0.00, "currBalance": 50.00, "comm1": 4.00, "status": "ACTIVE" },
+  { "name": "Rajesh R", "tamilName": "ராஜேஷ்", "address": "12 Bazaar Street", "city": "Trichy", "phone": "9567890123", "oldBalance": 150.00, "currBalance": 100.00, "comm1": 11.00, "status": "ACTIVE" },
+  { "name": "Shanthi P", "tamilName": "சாந்தி", "address": "9 Periyar Street", "city": "Salem", "phone": "9678901234", "oldBalance": 20.00, "currBalance": 10.00, "comm1": 3.00, "status": "ACTIVE" },
+  { "name": "Ganesh M", "tamilName": "கணேஷ்", "address": "14 Main Road", "city": "Erode", "phone": "9789012345", "oldBalance": 300.00, "currBalance": 250.00, "comm1": 7.50, "status": "ACTIVE" },
+  { "name": "Ramesh V", "tamilName": "ரமேஷ்", "address": "21 College Road", "city": "Vellore", "phone": "9890123456", "oldBalance": 120.00, "currBalance": 90.00, "comm1": 6.00, "status": "INACTIVE" },
+  { "name": "Divya S", "tamilName": "திவ்யா", "address": "76 Temple Street", "city": "Thanjavur", "phone": "9901234567", "oldBalance": 50.00, "currBalance": 75.00, "comm1": 5.50, "status": "ACTIVE" },
+  { "name": "Sathish K", "tamilName": "சதீஷ்", "address": "55 Gandhi Street", "city": "Karur", "phone": "9012345679", "oldBalance": 40.00, "currBalance": 20.00, "comm1": 2.50, "status": "ACTIVE" },
+  { "name": "Pooja R", "tamilName": "பூஜா", "address": "19 Anna Nagar", "city": "Nagercoil", "phone": "9123456790", "oldBalance": 10.00, "currBalance": 15.00, "comm1": 4.00, "status": "ACTIVE" },
+  { "name": "Vasanth A", "tamilName": "வசந்த்", "address": "66 Cross Road", "city": "Chennai", "phone": "9234567801", "oldBalance": 500.00, "currBalance": 450.00, "comm1": 12.00, "status": "ACTIVE" },
+  { "name": "Rekha J", "tamilName": "ரேகா", "address": "33 Temple View", "city": "Madurai", "phone": "9345678012", "oldBalance": 25.00, "currBalance": 40.00, "comm1": 6.00, "status": "ACTIVE" },
+  { "name": "Mohan P", "tamilName": "மோகன்", "address": "2 Market Road", "city": "Coimbatore", "phone": "9456780123", "oldBalance": 75.00, "currBalance": 60.00, "comm1": 8.00, "status": "ACTIVE" },
+  { "name": "Kavitha L", "tamilName": "கவிதா", "address": "5 North Market", "city": "Trichy", "phone": "9567801234", "oldBalance": 0.00, "currBalance": 10.00, "comm1": 2.00, "status": "ACTIVE" },
+  { "name": "Aravind S", "tamilName": "அரவிந்த்", "address": "17 South Market", "city": "Salem", "phone": "9678012345", "oldBalance": 30.00, "currBalance": 25.00, "comm1": 5.00, "status": "ACTIVE" }
+]
+
+Single Customer seeding
+{
+  "name": "Ravi Kumar",
+  "tamilName": "ரவி குமார்",
+  "address": "12 Gandhi Street",
+  "city": "Chennai",
+  "phone": "9876543210",
+  "oldBalance": 1000.50,
+  "currBalance": 500.25,
+  "comm1": 20.00,
+  "status": "ACTIVE"
+}
+
+
+
