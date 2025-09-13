@@ -1,5 +1,7 @@
 package com.moha123live.gtk_api.model;
 
+import jakarta.persistence.*;
+import lombok.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -8,19 +10,6 @@ import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.EntityListeners;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 @Entity
 @Table(name = "customers")
 @Where(clause = "is_deleted = false")
@@ -28,6 +17,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
+@Builder
 public class Customer {
 
     @Id
@@ -37,7 +27,7 @@ public class Customer {
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(length = 100)
+    @Column(length = 100)   
     private String tamilName;
 
     @Column(length = 255)
@@ -59,8 +49,10 @@ public class Customer {
     private BigDecimal comm1 = BigDecimal.ZERO;
 
     @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 10)
     private Status status = Status.ACTIVE;
-    
+
+    @Column(nullable = false)
     private Boolean isDeleted = false;
 
     @CreatedDate
@@ -68,10 +60,7 @@ public class Customer {
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    private LocalDateTime updateAt;
+    private LocalDateTime updatedAt;
 
-    public enum Status {
-        ACTIVE, INACTIVE
-    };
-
+    public enum Status { ACTIVE, INACTIVE };
 }

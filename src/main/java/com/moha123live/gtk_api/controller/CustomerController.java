@@ -2,7 +2,8 @@ package com.moha123live.gtk_api.controller;
 
 import org.springframework.web.bind.annotation.RestController;
 
-import com.moha123live.gtk_api.model.Customer;
+import com.moha123live.gtk_api.dto.requestDto.CustomerRequestDto;
+import com.moha123live.gtk_api.dto.responseDto.CustomerResponseDto;
 import com.moha123live.gtk_api.service.CustomerService;
 
 import java.util.List;
@@ -27,36 +28,34 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping
-    public ResponseEntity<List<Customer>> getAllCustomers() {
+    public ResponseEntity<List<CustomerResponseDto>> getAllCustomers() {
         return ResponseEntity.ok(customerService.getAllCustomers());
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<Customer> getCustomerById(@PathVariable Integer id) {
-        return customerService.getCustomerById(id)
-                .map(ResponseEntity::ok)
-                .orElse(ResponseEntity.notFound().build());
+    public ResponseEntity<CustomerResponseDto> getCustomerById(@PathVariable Integer id) {
+        CustomerResponseDto response = customerService.getCustomerById(id);
+        return ResponseEntity.ok(response);
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<Customer>> searchCustomersByName(@RequestParam String name) {
+    public ResponseEntity<List<CustomerResponseDto>> searchCustomersByName(@RequestParam String name) {
         return ResponseEntity.ok(customerService.getCustomersByName(name));
     }
 
     @PostMapping
-    public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer) {
+    public ResponseEntity<CustomerResponseDto> createCustomer(@RequestBody CustomerRequestDto customer) {
         return ResponseEntity.ok(customerService.createCustomer(customer));
     }
 
     @PostMapping("/bulk")
-    public ResponseEntity<List<Customer>> createAllCustomer(@RequestBody List<Customer> customers) {
+    public ResponseEntity<List<CustomerResponseDto>> createAllCustomer(@RequestBody List<CustomerRequestDto> customers) {
         return ResponseEntity.ok(customerService.createAllCustomers(customers));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<Customer> updateCustomer(@PathVariable Integer id, @RequestBody Customer customer) {
-        customer.setCusId(id);
-        return ResponseEntity.ok(customerService.updateCustomer(customer));
+    public ResponseEntity<CustomerResponseDto> updateCustomer(@PathVariable Integer id, @RequestBody CustomerRequestDto customer) {
+        return ResponseEntity.ok(customerService.updateCustomer(customer,id));
     }
 
     @DeleteMapping("/{id}")
