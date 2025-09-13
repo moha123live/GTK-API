@@ -39,19 +39,24 @@ public class Customer {
     @Column(length = 10)
     private String phone;
 
+    @Builder.Default
     @Column(precision = 10, scale = 2)
     private BigDecimal oldBalance = BigDecimal.ZERO;
 
+    @Builder.Default
     @Column(precision = 10, scale = 2)
     private BigDecimal currBalance = BigDecimal.ZERO;
 
+    @Builder.Default
     @Column(precision = 10, scale = 2)
     private BigDecimal comm1 = BigDecimal.ZERO;
 
+    @Builder.Default
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
     private Status status = Status.ACTIVE;
 
+    @Builder.Default
     @Column(nullable = false)
     private Boolean isDeleted = false;
 
