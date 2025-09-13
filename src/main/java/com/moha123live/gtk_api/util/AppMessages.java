@@ -54,6 +54,16 @@ public class AppMessages {
     public static final String USER_ENABLED = "User enabled successfully";
     public static final String USER_DISABLED = "User disabled successfully";
 
+    // --- Customer Messages ---
+    public static final String CUSTOMER_CREATED = "Customer created successfully";
+    public static final String CUSTOMER_ALL_CREATED = "All the customers are created successfully";
+    public static final String CUSTOMER_UPDATED = "Customer updated successfully";
+    public static final String CUSTOMER_DELETED = "Customer deleted successfully";
+    public static final String CUSTOMER_ENABLED = "Customer enabled successfully";
+    public static final String CUSTOMER_FETCHED = "Customer data fetched successfully";
+    public static final String CUSTOMERS_FETCHED = "Customers data fetched successfully";
+    public static final String CUSTOMER_DISABLED = "Customer disabled successfully";
+
     // --- Product Messages ---
     public static final String PRODUCT_SAVED = "Product saved successfully";
     public static final String PRODUCT_UPDATED = "Product updated successfully";

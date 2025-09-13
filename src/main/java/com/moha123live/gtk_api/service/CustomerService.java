@@ -47,12 +47,11 @@ public class CustomerService {
         return CustomerMapper.toResponseDto(data);
     }
 
-    public String deleteCustomer(int id) {
+    public void deleteCustomer(int id) {
         Customer customer = customerRepository.findById(id)
                 .orElseThrow(() -> new RuntimeException("Customer is not found"));
         customer.setIsDeleted(true);
         customerRepository.save(customer);
-        return "Deleted Successfully";
     }
 
     public List<CustomerResponseDto> getCustomersByName(String name) {

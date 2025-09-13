@@ -3,8 +3,13 @@ package com.moha123live.gtk_api.controller;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.moha123live.gtk_api.dto.requestDto.CustomerRequestDto;
+import com.moha123live.gtk_api.dto.responseDto.ApiResponse;
 import com.moha123live.gtk_api.dto.responseDto.CustomerResponseDto;
+import com.moha123live.gtk_api.model.Customer;
 import com.moha123live.gtk_api.service.CustomerService;
+import com.moha123live.gtk_api.util.ApiResponseUtil;
+import com.moha123live.gtk_api.util.AppMessages;
+
 import jakarta.validation.Valid;
 
 import java.util.List;
@@ -29,45 +34,51 @@ public class CustomerController {
     private CustomerService customerService;
 
     @GetMapping
-    public ResponseEntity<List<CustomerResponseDto>> getAllCustomers() {
-        return ResponseEntity.ok(customerService.getAllCustomers());
+    public ResponseEntity<ApiResponse<List<CustomerResponseDto>>> getAllCustomers() {
+        List<CustomerResponseDto> response = customerService.getAllCustomers();
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMERS_FETCHED, response));
     }
 
     @GetMapping("/{id}")
-    public ResponseEntity<CustomerResponseDto> getCustomerById(@PathVariable Integer id) {
+    public ResponseEntity<ApiResponse<CustomerResponseDto>> getCustomerById(@PathVariable Integer id) {
         CustomerResponseDto response = customerService.getCustomerById(id);
-        return ResponseEntity.ok(response);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_FETCHED,response));
     }
 
     @GetMapping("/search")
-    public ResponseEntity<List<CustomerResponseDto>> searchCustomersByName(@RequestParam String name) {
-        return ResponseEntity.ok(customerService.getCustomersByName(name));
+    public ResponseEntity<ApiResponse<List<CustomerResponseDto>>> searchCustomersByName(@RequestParam String name) {
+        List<CustomerResponseDto> response = customerService.getCustomersByName(name);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_FETCHED,response));
     }
 
     @PostMapping
-    public ResponseEntity<CustomerResponseDto> createCustomer(@Valid @RequestBody CustomerRequestDto customer) {
-        return ResponseEntity.ok(customerService.createCustomer(customer));
+    public ResponseEntity<ApiResponse<CustomerResponseDto>> createCustomer(@Valid @RequestBody CustomerRequestDto customer) {
+        CustomerResponseDto response = customerService.createCustomer(customer);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_CREATED,response));
     }
 
     @PostMapping("/bulk")
-    public ResponseEntity<List<CustomerResponseDto>> createAllCustomer(@Valid @RequestBody List<CustomerRequestDto> customers) {
-        return ResponseEntity.ok(customerService.createAllCustomers(customers));
+    public ResponseEntity<ApiResponse<List<CustomerResponseDto>>> createAllCustomer(@Valid @RequestBody List<CustomerRequestDto> customers) {
+        List<CustomerResponseDto> response = customerService.createAllCustomers(customers);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_ALL_CREATED,response));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CustomerResponseDto> updateCustomer(@PathVariable Integer id, @Valid @RequestBody CustomerRequestDto customer) {
-        return ResponseEntity.ok(customerService.updateCustomer(customer,id));
+    public ResponseEntity<ApiResponse<CustomerResponseDto>> updateCustomer(@PathVariable Integer id, @Valid @RequestBody CustomerRequestDto customer) {
+        CustomerResponseDto response = customerService.updateCustomer(customer,id);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_UPDATED,response));
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<String> deleteCustomer(@PathVariable Integer id) {
-        return ResponseEntity.ok(customerService.deleteCustomer(id));
+    public ResponseEntity<ApiResponse<Void>> deleteCustomer(@PathVariable Integer id) {
+        customerService.deleteCustomer(id);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_DELETED, null));
     }
 
     @GetMapping("/{id}/ledger")
-    public ResponseEntity<String> getCustomerLedger(@PathVariable Integer id) {
+    public ResponseEntity<ApiResponse<String>> getCustomerLedger(@PathVariable Integer id) {
         // Placeholder; later integrate Ledger service
-        return ResponseEntity.ok("Ledger for customer ID: " + id);
+        return ResponseEntity.ok(ApiResponseUtil.success("Ledger for customer ID: " + id, null));
     }
 
 
