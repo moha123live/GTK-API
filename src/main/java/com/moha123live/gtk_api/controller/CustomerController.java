@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.moha123live.gtk_api.dto.requestDto.CustomerRequestDto;
 import com.moha123live.gtk_api.dto.responseDto.CustomerResponseDto;
 import com.moha123live.gtk_api.service.CustomerService;
+import jakarta.validation.Valid;
 
 import java.util.List;
 
@@ -44,17 +45,17 @@ public class CustomerController {
     }
 
     @PostMapping
-    public ResponseEntity<CustomerResponseDto> createCustomer(@RequestBody CustomerRequestDto customer) {
+    public ResponseEntity<CustomerResponseDto> createCustomer(@Valid @RequestBody CustomerRequestDto customer) {
         return ResponseEntity.ok(customerService.createCustomer(customer));
     }
 
     @PostMapping("/bulk")
-    public ResponseEntity<List<CustomerResponseDto>> createAllCustomer(@RequestBody List<CustomerRequestDto> customers) {
+    public ResponseEntity<List<CustomerResponseDto>> createAllCustomer(@Valid @RequestBody List<CustomerRequestDto> customers) {
         return ResponseEntity.ok(customerService.createAllCustomers(customers));
     }
 
     @PutMapping("/{id}")
-    public ResponseEntity<CustomerResponseDto> updateCustomer(@PathVariable Integer id, @RequestBody CustomerRequestDto customer) {
+    public ResponseEntity<CustomerResponseDto> updateCustomer(@PathVariable Integer id, @Valid @RequestBody CustomerRequestDto customer) {
         return ResponseEntity.ok(customerService.updateCustomer(customer,id));
     }
 

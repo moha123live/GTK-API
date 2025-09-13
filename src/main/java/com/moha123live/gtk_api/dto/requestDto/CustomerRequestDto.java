@@ -1,35 +1,37 @@
 package com.moha123live.gtk_api.dto.requestDto;
 
 import java.math.BigDecimal;
+import com.moha123live.gtk_api.util.AppMessages;
+
 import jakarta.validation.constraints.*;
 import lombok.Data;
 
 @Data
 public class CustomerRequestDto {
 
-        @NotBlank(message = "Name is required")
-        @Size(max = 100, message = "Name must not exceed 100 character")
+        @NotBlank(message = AppMessages.CUSTOMER_NAME_REQUIRED)
+        @Size(max = 100, message = AppMessages.CUSTOMER_NAME_LENGTH)
         private String name;
 
-        @Size(max =100)
+        @Size(max =100, message = AppMessages.CUSTOMER_TAMIL_NAME_LENGTH)
         private String tamilName;
 
-        @Size(max = 255)
+        @Size(max = 255, message = AppMessages.CUSTOMER_ADDRESS_LENGTH)
         private String address;
 
-        @Size(max = 100)
+        @Size(max = 100, message = AppMessages.CUSTOMER_CITY_LENGTH)
         private String city;
 
-        @Pattern(regexp = "^[0-9]{10}$", message = "Phone must be 10 digits")
+        @Pattern(regexp = "^[0-9]{10}$", message = AppMessages.CUSTOMER_PHONE_PATTERN)
         private String phone;
 
-        @DecimalMin(value = "0.00", inclusive = true, message = "Old balance must be greater than or equal to 0.00")
+        @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.CUSTOMER_OLDBALANCE_GREATER_THAN_ZERO)
         private BigDecimal oldBalance;
 
-        @DecimalMin(value = "0.00", inclusive = true, message = "Current balance must be greater than or equal to 0.00")
+        @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.CUSTOMER_CURRBALANCE_GREATER_THAN_ZERO)
         private BigDecimal currBalance;
 
-        @DecimalMin(value = "0.00", inclusive = true, message = "Commission 1 must be greater than or equal to 0.00")
+        @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.CUSTOMER_COMMISSION_GREATER_THAN_ZERO)
         private BigDecimal comm1;
 
         private String status;

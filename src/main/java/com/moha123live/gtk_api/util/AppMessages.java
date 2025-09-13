@@ -69,4 +69,17 @@ public class AppMessages {
     public static final String BILLING_DELETED = "Billing deleted successfully";
     public static final String BILLING_NOT_FOUND = "Billing not found";
 
+    // --- Validation Messages ---
+    public static final String CUSTOMER_NAME_REQUIRED = "Customer name is required";
+    public static final String CUSTOMER_NAME_LENGTH = "Name must not exceed 100 character";
+    public static final String CUSTOMER_TAMIL_NAME_LENGTH = "Tamil name must not exceed 100 character";
+    public static final String CUSTOMER_ADDRESS_LENGTH = "Address must not exceed 255 character";
+    public static final String CUSTOMER_CITY_LENGTH = "City must not exceed 100 character";
+    public static final String CUSTOMER_PHONE_PATTERN = "Phone number must be 10 digit numeric value";
+    public static final String CUSTOMER_OLDBALANCE_GREATER_THAN_ZERO = "Old balance must be greater than or equal to 0.00";
+    public static final String CUSTOMER_CURRBALANCE_GREATER_THAN_ZERO = "Current balance must be greater than or equal to 0.00";
+    public static final String CUSTOMER_COMMISSION_GREATER_THAN_ZERO = "Commission 1 must be greater than or equal to 0.00";
+
+    // public static final String
+
 }
