@@ -2,10 +2,8 @@ package com.moha123live.gtk_api.dto.requestDto;
 
 import java.math.BigDecimal;
 import com.moha123live.gtk_api.util.AppMessages;
-
 import jakarta.validation.constraints.*;
 import lombok.Data;
-
 @Data
 public class CustomerRequestDto {
 

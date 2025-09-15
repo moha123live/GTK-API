@@ -40,7 +40,7 @@ public class CustomerController {
     @GetMapping("/search")
     public ResponseEntity<ApiResponse<List<CustomerResponseDto>>> searchCustomersByName(@RequestParam String name) {
         List<CustomerResponseDto> response = customerService.getCustomersByName(name);
-        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_FETCHED,response));
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMERS_FETCHED,response));
     }
 
     @PostMapping

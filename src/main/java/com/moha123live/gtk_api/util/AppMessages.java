@@ -66,6 +66,18 @@ public class AppMessages {
     public static final String CUSTOMER_ALREADY_EXISTS = "Customer name already exists";
     public static final String CUSTOMER_NOT_FOUND = "Customer not found";
 
+    // --- Supplier Messages ---
+    public static final String SUPPLIER_CREATED = "Supplier created successfully";
+    public static final String SUPPLIER_ALL_CREATED = "All the suppliers are created successfully";
+    public static final String SUPPLIER_UPDATED = "Supplier updated successfully";
+    public static final String SUPPLIER_DELETED = "Supplier deleted successfully";
+    public static final String SUPPLIER_ENABLED = "Supplier enabled successfully";
+    public static final String SUPPLIER_FETCHED = "Supplier data fetched successfully";
+    public static final String SUPPLIERS_FETCHED = "Suppliers data fetched successfully";
+    public static final String SUPPLIER_DISABLED = "Supplier disabled successfully";
+    public static final String SUPPLIER_ALREADY_EXISTS = "Supplier name already exists";
+    public static final String SUPPLIER_NOT_FOUND = "Supplier not found";
+
     // --- Product Messages ---
     public static final String PRODUCT_SAVED = "Product saved successfully";
     public static final String PRODUCT_UPDATED = "Product updated successfully";
@@ -81,7 +93,7 @@ public class AppMessages {
     public static final String BILLING_DELETED = "Billing deleted successfully";
     public static final String BILLING_NOT_FOUND = "Billing not found";
 
-    // --- Validation Messages ---
+    // --- Customer Validation Messages ---
     public static final String CUSTOMER_NAME_REQUIRED = "Customer name is mandatory";
     public static final String CUSTOMER_NAME_LENGTH = "Customer name must not exceed 100 characters";
     public static final String CUSTOMER_TAMIL_NAME_LENGTH = "Tamil name must not exceed 100 characters";
@@ -91,6 +103,14 @@ public class AppMessages {
     public static final String CUSTOMER_OLDBALANCE_GREATER_THAN_ZERO = "Old balance must be greater than or equal to 0.00";
     public static final String CUSTOMER_CURRBALANCE_GREATER_THAN_ZERO = "Current balance must be greater than or equal to 0.00";
     public static final String CUSTOMER_COMMISSION_GREATER_THAN_ZERO = "Commission value must be greater than or equal to 0.00";
+
+    // --- Supplier Validation Messages ---
+    public static final String SUPPLIER_NAME_REQUIRED = "Supplier name is mandatory";
+    public static final String SUPPLIER_NAME_LENGTH = "Supplier name must not exceed 100 characters";
+    public static final String SUPPLIER_ADDRESS_LENGTH = "Address must not exceed 255 characters";
+    public static final String SUPPLIER_CITY_LENGTH = "City name must not exceed 100 characters";
+    public static final String SUPPLIER_PHONE_PATTERN = "Phone number must consist of exactly 10 numeric digits";
+    public static final String SUPPLIER_BALANCE_DUE_GREATER_THAN_ZERO = "Old balance must be greater than or equal to 0.00";
 
     // public static final String
 

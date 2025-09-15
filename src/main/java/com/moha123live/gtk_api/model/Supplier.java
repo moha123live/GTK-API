@@ -1,12 +1,12 @@
 package com.moha123live.gtk_api.model;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 import org.hibernate.annotations.Where;
 import org.springframework.data.annotation.CreatedDate;
@@ -24,24 +24,21 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "suppliers")
 @Where(clause = "is_deleted = false")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Builder
-public class Customer {
+public class Supplier {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cusId;
+    private Integer supId;
 
     @Column(nullable = false, length = 100)
     private String name;
-
-    @Column(length = 100)   
-    private String tamilName;
 
     @Column(length = 255)
     private String address;
@@ -49,24 +46,16 @@ public class Customer {
     @Column(length = 100)
     private String city;
 
-    @Column(length = 10)
+    @Column(length = 20)
     private String phone;
 
     @Builder.Default
     @Column(precision = 10, scale = 2)
-    private BigDecimal oldBalance = BigDecimal.ZERO;
-
-    @Builder.Default
-    @Column(precision = 10, scale = 2)
-    private BigDecimal currBalance = BigDecimal.ZERO;
-
-    @Builder.Default
-    @Column(precision = 10, scale = 2)
-    private BigDecimal comm1 = BigDecimal.ZERO;
+    private BigDecimal balanceDue = BigDecimal.ZERO;
 
     @Builder.Default
     @Enumerated(EnumType.STRING)
-    @Column(nullable = false, length = 10)
+    @Column(length = 10)
     private Status status = Status.ACTIVE;
 
     @Builder.Default
@@ -80,5 +69,8 @@ public class Customer {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    public enum Status { ACTIVE, INACTIVE };
+    public enum Status {
+        ACTIVE, INACTIVE
+    }
+
 }
