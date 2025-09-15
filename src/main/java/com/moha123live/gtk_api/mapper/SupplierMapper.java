@@ -8,16 +8,16 @@ public class SupplierMapper {
 
     public static Supplier toEntity(SupplierRequestDto req){
         if (req == null) return null;
-        Supplier customer = new Supplier();
-            customer.setName(req.getName());
-            customer.setAddress(req.getAddress());
-            customer.setCity(req.getCity());
-            customer.setPhone(req.getPhone());
-            customer.setBalanceDue(req.getBalanceDue());
+        Supplier supplier = new Supplier();
+            supplier.setName(req.getName());
+            supplier.setAddress(req.getAddress());
+            supplier.setCity(req.getCity());
+            supplier.setPhone(req.getPhone());
+            supplier.setBalanceDue(req.getBalanceDue());
             if (req.getStatus() != null) {
-                customer.setStatus(Supplier.Status.valueOf(req.getStatus().toUpperCase()));
+                supplier.setStatus(req.getStatus());
             }
-        return customer;
+        return supplier;
     }
 
     public static SupplierResponseDto toResponseDto(Supplier res){

@@ -43,6 +43,7 @@ public class SupplierService {
     }
 
     public SupplierResponseDto updateSupplier(SupplierRequestDto request,Integer id) {
+        supplierRepository.findById(id).orElseThrow(() -> new NoSuchElementException(AppMessages.PRODUCT_NOT_FOUND));
         Supplier supplier = SupplierMapper.toEntity(request);
         supplier.setSupId(id);
         Supplier data = supplierRepository.save(supplier);

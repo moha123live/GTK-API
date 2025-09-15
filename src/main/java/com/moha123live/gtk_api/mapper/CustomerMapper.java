@@ -18,7 +18,7 @@ public class CustomerMapper {
             customer.setCurrBalance(req.getCurrBalance());
             customer.setComm1(req.getComm1());
             if (req.getStatus() != null) {
-                customer.setStatus(Customer.Status.valueOf(req.getStatus().toUpperCase()));
+                customer.setStatus(req.getStatus());
             }
         return customer;
     }

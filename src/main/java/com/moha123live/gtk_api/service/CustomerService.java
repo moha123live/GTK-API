@@ -43,6 +43,7 @@ public class CustomerService {
     }
 
     public CustomerResponseDto updateCustomer(CustomerRequestDto request,Integer id) {
+        customerRepository.findById(id).orElseThrow(() -> new NoSuchElementException(AppMessages.PRODUCT_NOT_FOUND));
         Customer customer = CustomerMapper.toEntity(request);
         customer.setCusId(id);
         Customer data = customerRepository.save(customer);

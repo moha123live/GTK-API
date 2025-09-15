@@ -1,12 +1,14 @@
 package com.moha123live.gtk_api.dto.requestDto;
 
 import java.math.BigDecimal;
+import com.moha123live.gtk_api.model.Supplier;
 import com.moha123live.gtk_api.util.AppMessages;
 import jakarta.validation.constraints.DecimalMin;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Data;
+
 @Data
 public class SupplierRequestDto {
     @NotBlank(message = AppMessages.SUPPLIER_NAME_REQUIRED)
@@ -25,5 +27,6 @@ public class SupplierRequestDto {
     @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.SUPPLIER_BALANCE_DUE_GREATER_THAN_ZERO)
     private BigDecimal balanceDue;
 
-    private String status;
+    private Supplier.Status status;
+
 }

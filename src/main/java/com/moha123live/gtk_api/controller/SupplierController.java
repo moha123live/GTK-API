@@ -44,7 +44,7 @@ public class SupplierController {
     }
 
     @PostMapping("/bulk")
-    public ResponseEntity<ApiResponse<List<SupplierResponseDto>>> createAllSupplier(@Valid @RequestBody List<SupplierRequestDto> suppliers) {
+    public ResponseEntity<ApiResponse<List<SupplierResponseDto>>> createAllSuppliers(@Valid @RequestBody List<SupplierRequestDto> suppliers) {
         List<SupplierResponseDto> response = supplierService.createAllSuppliers(suppliers);
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.SUPPLIER_ALL_CREATED,response));
     }

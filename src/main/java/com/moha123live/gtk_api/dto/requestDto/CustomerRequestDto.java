@@ -1,9 +1,11 @@
 package com.moha123live.gtk_api.dto.requestDto;
 
 import java.math.BigDecimal;
+import com.moha123live.gtk_api.model.Customer;
 import com.moha123live.gtk_api.util.AppMessages;
 import jakarta.validation.constraints.*;
 import lombok.Data;
+
 @Data
 public class CustomerRequestDto {
 
@@ -11,7 +13,7 @@ public class CustomerRequestDto {
         @Size(max = 100, message = AppMessages.CUSTOMER_NAME_LENGTH)
         private String name;
 
-        @Size(max =100, message = AppMessages.CUSTOMER_TAMIL_NAME_LENGTH)
+        @Size(max = 100, message = AppMessages.CUSTOMER_TAMIL_NAME_LENGTH)
         private String tamilName;
 
         @Size(max = 255, message = AppMessages.CUSTOMER_ADDRESS_LENGTH)
@@ -32,6 +34,6 @@ public class CustomerRequestDto {
         @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.CUSTOMER_COMMISSION_GREATER_THAN_ZERO)
         private BigDecimal comm1;
 
-        private String status;
-    
+        private Customer.Status status;
+
 }

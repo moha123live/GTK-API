@@ -50,7 +50,7 @@ public class CustomerController {
     }
 
     @PostMapping("/bulk")
-    public ResponseEntity<ApiResponse<List<CustomerResponseDto>>> createAllCustomer(@Valid @RequestBody List<CustomerRequestDto> customers) {
+    public ResponseEntity<ApiResponse<List<CustomerResponseDto>>> createAllCustomers(@Valid @RequestBody List<CustomerRequestDto> customers) {
         List<CustomerResponseDto> response = customerService.createAllCustomers(customers);
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.CUSTOMER_ALL_CREATED,response));
     }

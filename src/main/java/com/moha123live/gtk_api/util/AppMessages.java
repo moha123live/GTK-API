@@ -79,13 +79,16 @@ public class AppMessages {
     public static final String SUPPLIER_NOT_FOUND = "Supplier not found";
 
     // --- Product Messages ---
-    public static final String PRODUCT_SAVED = "Product saved successfully";
+    public static final String PRODUCT_CREATED = "Product created successfully";
+    public static final String PRODUCT_ALL_CREATED = "All the products are created successfully";
     public static final String PRODUCT_UPDATED = "Product updated successfully";
     public static final String PRODUCT_DELETED = "Product deleted successfully";
-    public static final String PRODUCT_FETCHED = "Product fetched successfully";
+    public static final String PRODUCT_ENABLED = "Product enabled successfully";
+    public static final String PRODUCT_FETCHED = "Product data fetched successfully";
+    public static final String PRODUCTS_FETCHED = "Products data fetched successfully";
+    public static final String PRODUCT_DISABLED = "Product disabled successfully";
+    public static final String PRODUCT_ALREADY_EXISTS = "Product name already exists";
     public static final String PRODUCT_NOT_FOUND = "Product not found";
-    public static final String PRODUCT_OUT_OF_STOCK = "Product is out of stock";
-    public static final String PRODUCT_ALREADY_EXISTS = "Product already exists";
 
     // --- Billing Messages ---
     public static final String BILLING_ADDED = "Billing saved successfully";

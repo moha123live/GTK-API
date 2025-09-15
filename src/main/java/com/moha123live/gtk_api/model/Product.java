@@ -1,11 +1,8 @@
 package com.moha123live.gtk_api.model;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+
 import org.hibernate.annotations.Where;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
@@ -19,47 +16,37 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "customers")
+@Table(name = "products")
 @Where(clause = "is_deleted = false")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EntityListeners(AuditingEntityListener.class)
 @Builder
-public class Customer {
-
+public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer cusId;
+    private Integer prodId;
 
     @Column(nullable = false, length = 100)
     private String name;
 
-    @Column(length = 100)   
+    @Column(length = 100)
     private String tamilName;
 
-    @Column(length = 255)
-    private String address;
-
-    @Column(length = 100)
-    private String city;
-
-    @Column(length = 10)
-    private String phone;
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false, length = 5)
+    private Unit unit;
 
     @Builder.Default
     @Column(precision = 10, scale = 2)
-    private BigDecimal oldBalance = BigDecimal.ZERO;
-
-    @Builder.Default
-    @Column(precision = 10, scale = 2)
-    private BigDecimal currBalance = BigDecimal.ZERO;
-
-    @Builder.Default
-    @Column(precision = 10, scale = 2)
-    private BigDecimal comm1 = BigDecimal.ZERO;
+    private BigDecimal comm2 = BigDecimal.ZERO;
 
     @Builder.Default
     @Enumerated(EnumType.STRING)
@@ -77,5 +64,12 @@ public class Customer {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    public enum Status { ACTIVE, INACTIVE };
+    public enum Unit {
+        KG, GRAM, BAG, PIECE, PACK, DOZEN, LTR, ML
+    }
+
+    public enum Status {
+        ACTIVE, INACTIVE
+    }
+
 }
