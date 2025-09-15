@@ -2,6 +2,7 @@ package com.moha123live.gtk_api.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -11,6 +12,7 @@ import com.moha123live.gtk_api.dto.responseDto.CustomerResponseDto;
 import com.moha123live.gtk_api.mapper.CustomerMapper;
 import com.moha123live.gtk_api.model.Customer;
 import com.moha123live.gtk_api.repository.CustomerRepository;
+import com.moha123live.gtk_api.util.AppMessages;
 
 @Service
 public class CustomerService {
@@ -28,15 +30,17 @@ public class CustomerService {
     }
 
     public CustomerResponseDto getCustomerById(Integer id) {
-        Customer customer = customerRepository.findById(id).orElseThrow(() -> new RuntimeException("Customer not found with id: " + id));
+        Customer customer = customerRepository.findById(id).orElseThrow(() -> new NoSuchElementException(AppMessages.CUSTOMER_NOT_FOUND));
         CustomerResponseDto response = CustomerMapper.toResponseDto(customer);
         return response;
     }
 
     public CustomerResponseDto createCustomer(CustomerRequestDto request) {
+        if (customerRepository.existsByNameIgnoreCase(request.getName())) {
+            throw new IllegalArgumentException(request.getName() + " - " + AppMessages.CUSTOMER_ALREADY_EXISTS);
+        }
         Customer customer = CustomerMapper.toEntity(request);
         Customer data = customerRepository.save(customer);
-        System.out.println("data  ==  " + data);
         return CustomerMapper.toResponseDto(data);
     }
 
@@ -49,7 +53,7 @@ public class CustomerService {
 
     public void deleteCustomer(int id) {
         Customer customer = customerRepository.findById(id)
-                .orElseThrow(() -> new RuntimeException("Customer is not found"));
+                .orElseThrow(() -> new NoSuchElementException(AppMessages.CUSTOMER_ALREADY_EXISTS));
         customer.setIsDeleted(true);
         customerRepository.save(customer);
     }
@@ -66,6 +70,11 @@ public class CustomerService {
     public List<CustomerResponseDto> createAllCustomers(List<CustomerRequestDto> requests) {
         List<Customer> customersToSave = new ArrayList<>();
         for (CustomerRequestDto request : requests) {
+            if (customerRepository.existsByNameIgnoreCase(request.getName())) {
+                throw new IllegalArgumentException(
+                        request.getName() + " - " + AppMessages.CUSTOMER_ALREADY_EXISTS
+                );
+            }
             Customer customer = CustomerMapper.toEntity(request);
             customersToSave.add(customer);
         }

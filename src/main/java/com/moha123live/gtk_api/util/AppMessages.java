@@ -63,6 +63,8 @@ public class AppMessages {
     public static final String CUSTOMER_FETCHED = "Customer data fetched successfully";
     public static final String CUSTOMERS_FETCHED = "Customers data fetched successfully";
     public static final String CUSTOMER_DISABLED = "Customer disabled successfully";
+    public static final String CUSTOMER_ALREADY_EXISTS = "Customer name already exists";
+    public static final String CUSTOMER_NOT_FOUND = "Customer not found";
 
     // --- Product Messages ---
     public static final String PRODUCT_SAVED = "Product saved successfully";
@@ -80,15 +82,15 @@ public class AppMessages {
     public static final String BILLING_NOT_FOUND = "Billing not found";
 
     // --- Validation Messages ---
-    public static final String CUSTOMER_NAME_REQUIRED = "Customer name is required";
-    public static final String CUSTOMER_NAME_LENGTH = "Name must not exceed 100 character";
-    public static final String CUSTOMER_TAMIL_NAME_LENGTH = "Tamil name must not exceed 100 character";
-    public static final String CUSTOMER_ADDRESS_LENGTH = "Address must not exceed 255 character";
-    public static final String CUSTOMER_CITY_LENGTH = "City must not exceed 100 character";
-    public static final String CUSTOMER_PHONE_PATTERN = "Phone number must be 10 digit numeric value";
+    public static final String CUSTOMER_NAME_REQUIRED = "Customer name is mandatory";
+    public static final String CUSTOMER_NAME_LENGTH = "Customer name must not exceed 100 characters";
+    public static final String CUSTOMER_TAMIL_NAME_LENGTH = "Tamil name must not exceed 100 characters";
+    public static final String CUSTOMER_ADDRESS_LENGTH = "Address must not exceed 255 characters";
+    public static final String CUSTOMER_CITY_LENGTH = "City name must not exceed 100 characters";
+    public static final String CUSTOMER_PHONE_PATTERN = "Phone number must consist of exactly 10 numeric digits";
     public static final String CUSTOMER_OLDBALANCE_GREATER_THAN_ZERO = "Old balance must be greater than or equal to 0.00";
     public static final String CUSTOMER_CURRBALANCE_GREATER_THAN_ZERO = "Current balance must be greater than or equal to 0.00";
-    public static final String CUSTOMER_COMMISSION_GREATER_THAN_ZERO = "Commission 1 must be greater than or equal to 0.00";
+    public static final String CUSTOMER_COMMISSION_GREATER_THAN_ZERO = "Commission value must be greater than or equal to 0.00";
 
     // public static final String
 
