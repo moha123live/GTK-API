@@ -29,7 +29,7 @@ public class SecurityConfig {
                 .csrf(AbstractHttpConfigurer::disable)
                 .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(auth -> auth
-                        .requestMatchers("/auth/**").permitAll() // login & register open
+                        .requestMatchers("/login").permitAll() // login & register open
                         // .requestMatchers("/admin/**").hasRole("ADMIN") // only admin
                         // .requestMatchers("/helper/**").hasRole("HELPER") // only helper
                         .anyRequest().authenticated() // everything else needs JWT

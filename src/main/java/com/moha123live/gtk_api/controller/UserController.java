@@ -35,12 +35,6 @@ public class UserController {
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.USER_FETCHED,response));
     }
 
-    @PostMapping
-    public ResponseEntity<ApiResponse<UserResponseDto>> createUser(@Valid @RequestBody UserRequestDto.Create user) {
-        UserResponseDto response = userService.createUser(user);
-        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.USER_CREATED,response));
-    }
-
     @PutMapping("/{id}/role-status")
     public ResponseEntity<ApiResponse<UserResponseDto>> updateUserRoleAndStatus(@PathVariable Integer id, @Valid @RequestBody UserRequestDto.RoleAndStatus user) {
         UserResponseDto response = userService.updateUserRoleAndStatus(id, user);
