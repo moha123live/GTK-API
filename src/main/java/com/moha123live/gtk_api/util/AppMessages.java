@@ -44,7 +44,10 @@ public class AppMessages {
     public static final String USER_LOGIN_SUCCESS = "User logged in successfully";
     public static final String USER_LOGOUT_SUCCESS = "User logged out successfully";
     public static final String USER_ALREADY_EXISTS = "User already exists";
+    public static final String USER_NAME_ALREADY_EXISTS = "User name already exists";
+    public static final String USER_EMAIL_ALREADY_EXISTS = "User email already exists";
     public static final String USER_NOT_FOUND = "User not found";
+    public static final String USER_INCORRECT_PASSWORD = "Old password is incorrect";
     public static final String USER_CREATED = "User created successfully";
     public static final String USER_UPDATED = "User updated successfully";
     public static final String USER_DELETED = "User deleted successfully";
@@ -53,6 +56,8 @@ public class AppMessages {
     public static final String USER_DETAILS_DELETED = "User details deleted successfully";
     public static final String USER_ENABLED = "User enabled successfully";
     public static final String USER_DISABLED = "User disabled successfully";
+    public static final String USER_FETCHED = "Customer data fetched successfully";
+    public static final String USERS_FETCHED = "Customers data fetched successfully";
 
     // --- Customer Messages ---
     public static final String CUSTOMER_CREATED = "Customer created successfully";
@@ -114,6 +119,16 @@ public class AppMessages {
     public static final String SUPPLIER_CITY_LENGTH = "City name must not exceed 100 characters";
     public static final String SUPPLIER_PHONE_PATTERN = "Phone number must consist of exactly 10 numeric digits";
     public static final String SUPPLIER_BALANCE_DUE_GREATER_THAN_ZERO = "Old balance must be greater than or equal to 0.00";
+
+    // --- User Validation Messages ---
+    public static final String USER_USERNAME_REQUIRED = "Username is required";
+    public static final String USER_USERNAME_LENGTH = "Username must be between 3 and 50 characters";
+    public static final String USER_PASSWORD_REQUIRED = "Password is required";
+    public static final String USER_OLDPASSWORD_REQUIRED = "Old password is required";
+    public static final String USER_NEWPASSWORD_REQUIRED = "New password is required";
+    public static final String USER_EMAIL_REQUIRED = "Email is required";
+    public static final String USER_EMAIL_INVALID = "Please provide a valid email address";
+    public static final String USER_EMAIL_LENGTH = "Email must not exceed 100 characters";
 
     // public static final String
 
