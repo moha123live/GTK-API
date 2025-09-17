@@ -73,6 +73,8 @@ public class Sale {
     @Column(nullable = false)
     private LocalDateTime updatedAt;
 
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "updated_by")
     private Integer updatedBy;
 
 }

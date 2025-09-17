@@ -69,6 +69,8 @@ public class Purchase {
     @LastModifiedDate
     private LocalDateTime updatedAt;
 
-    private Integer updatedBy;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "updated_by")
+    private User updatedBy;
 
 }
