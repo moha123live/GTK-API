@@ -13,6 +13,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 
@@ -23,6 +24,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @GetMapping
     public ResponseEntity<ApiResponse<List<UserResponseDto>>> getAllHelperUsers() {
         List<UserResponseDto> response = userService.getAllHelperUsers();
@@ -35,12 +37,14 @@ public class UserController {
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.USER_FETCHED,response));
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PutMapping("/{id}/role-status")
     public ResponseEntity<ApiResponse<UserResponseDto>> updateUserRoleAndStatus(@PathVariable Integer id, @Valid @RequestBody UserRequestDto.RoleAndStatus user) {
         UserResponseDto response = userService.updateUserRoleAndStatus(id, user);
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.USER_UPDATED,response));
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PutMapping("/{id}/password/admin")
     public ResponseEntity<ApiResponse<UserResponseDto>> updatePasswordByAdmin(@PathVariable Integer id, @RequestBody String password) {
         UserResponseDto response = userService.updatePasswordByAdmin(id, password);
@@ -53,6 +57,7 @@ public class UserController {
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.USER_UPDATED,response));
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @DeleteMapping("/{id}")
     public ResponseEntity<ApiResponse<Void>> deleteUser(@PathVariable Integer id) {
         userService.deleteUser(id);

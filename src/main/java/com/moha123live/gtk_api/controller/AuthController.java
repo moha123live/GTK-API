@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -49,6 +50,7 @@ public class AuthController {
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.USER_LOGIN_SUCCESS, Map.of("token", jwt)));
     }
 
+    @PreAuthorize("hasAuthority('ADMIN')")
     @PostMapping("/register")
     public ResponseEntity<ApiResponse<UserResponseDto>> createUser(@Valid @RequestBody UserRequestDto.Create request) {
         UserResponseDto response = userService.createUser(request);
