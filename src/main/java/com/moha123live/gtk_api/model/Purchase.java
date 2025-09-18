@@ -45,7 +45,7 @@ public class Purchase {
     private Product product;
 
     @Column(length = 10)
-    private Integer billNo;
+    private String billNo;
 
     @Column(nullable = false)
     private LocalDate date;
@@ -60,7 +60,7 @@ public class Purchase {
     private BigDecimal weight;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal totalAmount;
+    private BigDecimal amount;
 
     @CreatedDate
     @Column(updatable = false)
