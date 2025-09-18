@@ -6,7 +6,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor(access = AccessLevel.PRIVATE) // restricted to create new object
 public class AppMessages {
 
-    //Response string
+    // Response string
     public static final String SUCCESS = "success";
     public static final String ERROR = "error";
     public static final String WARNING = "warning";
@@ -103,8 +103,9 @@ public class AppMessages {
     public static final String BILL_UPDATED = "Bill updated successfully";
     public static final String BILL_DELETED = "Bill deleted successfully";
     public static final String BILL_NOT_FOUND = "Bill not found";
-    
-    //--- Purchase Validation Message ---
+
+    // --- Purchase Validation Message ---
+    public static final String PURCHASE_REQUIRED = "Purchase is required";
     public static final String PURCHASE_BILL_LENGTH = "Purchase bill number must not exceed 10 characters";
     public static final String PURCHASE_DATE_REQUIRED = "Date is required";
     public static final String PURCHASE_RATE_REQUIRED = "Purchase Rate is required";
@@ -114,7 +115,7 @@ public class AppMessages {
     public static final String PURCHASE_WEIGHT = "Purchase weight is required";
     public static final String PURCHASE_AMOUNT = "Purchase amount is required";
 
-    //--- Sales Validation Message ---
+    // --- Sales Validation Message ---
     public static final String SALE_DATE_REQUIRED = "Date is required";;
     public static final String SALE_RATE_REQUIRED = "Sale Rate is required";;
     public static final String SALE_RATE_LENGTH = "Sale rate must be greater than 0";;
@@ -125,7 +126,7 @@ public class AppMessages {
     public static final String SALE_AMOUNT_LENGTH = "Sale amount must be greater than 0";
     public static final String SALE_NETAMOUNT_REQUIRED = "Sale netamount is required";
     public static final String SALE_NETAMOUNT_LENGTH = "Sale netamount must be greater than 0";
-    public static final String SALE_COMMISSION_NONNEGATIVE ="Commission cannot be negative";
+    public static final String SALE_COMMISSION_NONNEGATIVE = "Commission cannot be negative";
 
     // --- Customer Validation Messages ---
     public static final String CUSTOMER_NAME_REQUIRED = "Customer name is mandatory";
@@ -162,6 +163,24 @@ public class AppMessages {
     public static final String USER_EMAIL_REQUIRED = "Email is required";
     public static final String USER_EMAIL_INVALID = "Please provide a valid email address";
     public static final String USER_EMAIL_LENGTH = "Email must not exceed 100 characters";
+
+    // --- Bill Summary Validation Messages ---
+    public static final String BillSUMMARY_REQUIRED = "Bill summary is required";
+    public static final String BillSUMMARY_QUANTITY_REQUIRED = "Total quantity is required";
+    public static final String BillSUMMARY_QUANTITY_GREATER_THAN_ZERO = "Total quantity must be greater than 0";
+    public static final String BillSUMMARY_BAGWEIGHT_REQUIRED = "Total bag weight is required";
+    public static final String BillSUMMARY_BAGWEIGHT_GREATER_THAN_ZERO = "Total bag weight must be greater than 0";
+    public static final String BillSUMMARY_WEIGHT_REQUIRED = "Total weight is required";
+    public static final String BillSUMMARY_WEIGHT_GREATER_THAN_ZERO = "Total weight must be greater than 0";
+    public static final String BillSUMMARY_AMOUNT_REQUIRED = "Total amount is required";
+    public static final String BillSUMMARY_AMOUNT_GREATER_THAN_ZERO = "Total amount must be greater than 0";
+    public static final String BillSUMMARY_NETAMOUNT_REQUIRED = "Total net amount is required";
+    public static final String BillSUMMARY_NETAMOUNT_GREATER_THAN_ZERO = "Total net amount must be greater than 0";
+
+    // --- Bill Summary Validation Messages ---
+    public static final String LEDGER_ENTITY_TYPE_REQUIRED = "Entity type is required";
+    public static final String LEDGER_ENTITY_ID_REQUIRED = "Entity ID is required";
+    public static final String LEDGER_REFERENCE_TYPE_REQUIRED = "Reference type is required";
 
     // public static final String
 

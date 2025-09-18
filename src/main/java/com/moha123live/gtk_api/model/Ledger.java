@@ -3,6 +3,7 @@ package com.moha123live.gtk_api.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -20,7 +21,7 @@ public class Ledger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long ledId;
+    private Integer ledId;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)
@@ -29,14 +30,14 @@ public class Ledger {
     @Column(nullable = false)
     private Integer entityId; // FK to Customer.cusId or Supplier.supId
 
-    private Long referenceId; // Nullable → depends on reference type
+    private Integer referenceId; // Nullable
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
     private ReferenceType referenceType;
 
     @Column(nullable = false)
-    private LocalDateTime date;
+    private LocalDate date;
 
     @Builder.Default
     @Column(precision = 10, scale = 2)

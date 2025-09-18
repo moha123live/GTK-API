@@ -16,7 +16,7 @@ public class SaleRequestDto {
     private LocalDate date;
 
     @NotNull(message = AppMessages.CUSTOMER_ID_NOT_FOUND)
-    private Integer customerId;
+    private Integer custId;
 
     @NotNull(message = AppMessages.SALE_QUANTITY_REQUIRED)
     private Integer qty;

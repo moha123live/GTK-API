@@ -4,12 +4,10 @@ import com.moha123live.gtk_api.dto.requestDto.BillSummaryRequestDto;
 import com.moha123live.gtk_api.dto.responseDto.BillSummaryResponseDto;
 import com.moha123live.gtk_api.model.BillSummary;
 import com.moha123live.gtk_api.model.Purchase;
-import org.springframework.stereotype.Component;
 
-@Component
 public class BillSummaryMapper {
 
-    public BillSummary toEntity(BillSummaryRequestDto req, Purchase purchase) {
+    public static BillSummary toEntity(BillSummaryRequestDto req, Purchase purchase) {
         if (req == null) return null;
 
         return BillSummary.builder()
@@ -22,7 +20,7 @@ public class BillSummaryMapper {
                 .build();
     }
 
-    public BillSummaryResponseDto toResponseDto(BillSummary res) {
+    public static BillSummaryResponseDto toResponseDto(BillSummary res) {
         if (res == null) return null;
 
         return BillSummaryResponseDto.builder()

@@ -1,77 +1,54 @@
 package com.moha123live.gtk_api.mapper;
 
-import com.moha123live.gtk_api.dto.requestDto.LedgerRequestDto;
+import java.math.BigDecimal;
+
 import com.moha123live.gtk_api.dto.responseDto.LedgerResponseDto;
 import com.moha123live.gtk_api.model.Ledger;
-import org.springframework.stereotype.Component;
+import com.moha123live.gtk_api.model.Purchase;
+import com.moha123live.gtk_api.model.Sale;
 
-import java.math.BigDecimal;
-import java.time.LocalDateTime;
-
-@Component
 public class LedgerMapper {
 
-    public Ledger toEntity(LedgerRequestDto req, BigDecimal oldBalance) {
-        if (req == null) return null;
-
-        BigDecimal debit = req.getDebit() != null ? req.getDebit() : BigDecimal.ZERO;
-        BigDecimal credit = req.getCredit() != null ? req.getCredit() : BigDecimal.ZERO;
-
-        BigDecimal newBalance = oldBalance.add(credit).subtract(debit);
-
+    public static Ledger toPurchaseLedger(Purchase purchase) {
         return Ledger.builder()
-                .entityType(Ledger.EntityType.valueOf(req.getEntityType()))
-                .entityId(req.getEntityId())
-                .referenceId(req.getReferenceId())
-                .referenceType(Ledger.ReferenceType.valueOf(req.getReferenceType()))
-                .date(req.getDate() != null ? req.getDate() : LocalDateTime.now())
-                .debit(debit)
-                .credit(credit)
-                .oldBalance(oldBalance)
-                .newBalance(newBalance)
+                .entityType(Ledger.EntityType.SUPPLIER)
+                .entityId(purchase.getSupplier().getSupId())
+                .referenceId(purchase.getPurId())
+                .referenceType(Ledger.ReferenceType.PURCHASE)
+                .date(purchase.getDate())
+                .debit(purchase.getAmount())
+                .credit(BigDecimal.ZERO)
+                .oldBalance(BigDecimal.ZERO)
+                .newBalance(purchase.getAmount())
                 .build();
     }
 
-    // From transaction (purchase/sale system-generated)
-    public Ledger fromTransaction(
-            Ledger.EntityType entityType,
-            Integer entityId,
-            Ledger.ReferenceType refType,
-            Long referenceId,
-            BigDecimal debit,
-            BigDecimal credit,
-            BigDecimal oldBalance
-    ) {
-        BigDecimal newBalance = oldBalance.add(credit).subtract(debit);
-
+    public static Ledger toSaleLedger(Sale sale) {
         return Ledger.builder()
-                .entityType(entityType)
-                .entityId(entityId)
-                .referenceId(referenceId)
-                .referenceType(refType)
-                .date(LocalDateTime.now())
-                .debit(debit)
-                .credit(credit)
-                .oldBalance(oldBalance)
-                .newBalance(newBalance)
+                .entityType(Ledger.EntityType.CUSTOMER)
+                .entityId(sale.getCustomer().getCusId())
+                .referenceId(sale.getSaleId())
+                .referenceType(Ledger.ReferenceType.SALE)
+                .date(sale.getDate())
+                .debit(BigDecimal.ZERO)
+                .credit(sale.getAmount())
+                .oldBalance(BigDecimal.ZERO)
+                .newBalance(sale.getAmount())
                 .build();
     }
 
-    // To response
-    public LedgerResponseDto toResponseDto(Ledger res) {
-        if (res == null) return null;
-
+    public static LedgerResponseDto toResponseDto(Ledger ledger) {
         return LedgerResponseDto.builder()
-                .id(res.getLedId())
-                .entityType(res.getEntityType().name())
-                .entityId(res.getEntityId())
-                .referenceId(res.getReferenceId())
-                .referenceType(res.getReferenceType().name())
-                .date(res.getDate())
-                .debit(res.getDebit())
-                .credit(res.getCredit())
-                .oldBalance(res.getOldBalance())
-                .newBalance(res.getNewBalance())
+                .id(ledger.getLedId())
+                .entityType(ledger.getEntityType().name())
+                .entityId(ledger.getEntityId())
+                .referenceId(ledger.getReferenceId())
+                .referenceType(ledger.getReferenceType().name())
+                .date(ledger.getDate())
+                .debit(ledger.getDebit())
+                .credit(ledger.getCredit())
+                .oldBalance(ledger.getOldBalance())
+                .newBalance(ledger.getNewBalance())
                 .build();
     }
 }

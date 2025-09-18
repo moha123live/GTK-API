@@ -4,17 +4,17 @@ import lombok.Builder;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.time.LocalDate;
 
 @Data
 @Builder
 public class LedgerResponseDto {
-    private Long id;
+    private Integer id;
     private String entityType;
     private Integer entityId;
-    private Long referenceId;
+    private Integer referenceId;
     private String referenceType;
-    private LocalDateTime date;
+    private LocalDate date;
     private BigDecimal debit;
     private BigDecimal credit;
     private BigDecimal oldBalance;

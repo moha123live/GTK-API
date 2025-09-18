@@ -15,10 +15,10 @@ import lombok.Data;
 @Data
 public class PurchaseRequestDto {
 
-    @NotNull(message = AppMessages.SUPPLIER_NOT_FOUND)
+    @NotNull(message = AppMessages.SUPPLIER_ID_NOT_FOUND)
     private Integer supId;
 
-    @NotNull(message = AppMessages.PRODUCT_NOT_FOUND)
+    @NotNull(message = AppMessages.PRODUCT_ID_NOT_FOUND)
     private Integer productId;
 
     @Size(max = 10, message = AppMessages.PURCHASE_BILL_LENGTH)

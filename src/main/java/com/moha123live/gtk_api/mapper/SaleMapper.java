@@ -5,14 +5,11 @@ import com.moha123live.gtk_api.dto.responseDto.SaleResponseDto;
 import com.moha123live.gtk_api.model.Customer;
 import com.moha123live.gtk_api.model.Purchase;
 import com.moha123live.gtk_api.model.Sale;
-import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
-
-@Component
 public class SaleMapper {
 
-    public Sale toEntity(SaleRequestDto req, Purchase purchase, Customer customer) {
+    public static Sale toEntity(SaleRequestDto req, Purchase purchase, Customer customer) {
         if (req == null) return null;
         return Sale.builder()
                 .purchase(purchase)
@@ -29,7 +26,7 @@ public class SaleMapper {
                 .build();
     }
 
-    public SaleResponseDto toResponseDto(Sale res) {
+    public static SaleResponseDto toResponseDto(Sale res) {
         if (res == null) return null;
 
         return SaleResponseDto.builder()

@@ -10,7 +10,7 @@ import com.moha123live.gtk_api.model.Supplier;
 
 public class PurchaseMapper {
 
-    public Purchase toEntity(PurchaseRequestDto req, Supplier supplier, Product product) {
+    public static Purchase toEntity(PurchaseRequestDto req, Supplier supplier, Product product) {
         if (req == null) return null;
 
         return Purchase.builder()
@@ -25,7 +25,7 @@ public class PurchaseMapper {
                 .build();
     }
 
-    public PurchaseResponseDto toResponseDto(Purchase res) {
+    public static PurchaseResponseDto toResponseDto(Purchase res) {
         if (res == null) return null;
 
         return PurchaseResponseDto.builder()
