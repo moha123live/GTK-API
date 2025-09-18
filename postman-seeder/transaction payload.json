@@ -1,0 +1,65 @@
+{
+    "productId": 1,
+    "supId": 101,
+    "billNo": "BILL-2025-01",
+    "date": "2025-09-17T10:30:00",
+    "purchase": {
+        "rate": 20,
+        "qty": 2,
+        "weight": 105.0,
+        "amount": 2100
+    },
+    "sales": [
+        {
+            "customerId": 201,
+            "rate": 20.00,
+            "qty": 1,
+            "weight": 20.0,
+            "bagRate": 15.00,
+            "bagWeight": 0.0,
+            "commission": 34.00,
+            "amount": 400.00,
+            "netAmount": 449.00
+        },
+        {
+            "customerId": 202,
+            "rate": 20.00,
+            "qty": 1,
+            "weight": 20.0,
+            "bagRate": 15.00,
+            "bagWeight": 0.0,
+            "commission": 34.00,
+            "amount": 400.00,
+            "netAmount": 449.00
+        },
+        {
+            "customerId": 203,
+            "rate": 20.00,
+            "qty": 2,
+            "weight": 40.0,
+            "bagRate": 10.00,
+            "bagWeight": 0.0,
+            "commission": 29.00,
+            "amount": 800.00,
+            "netAmount": 878.00
+        },
+        {
+            "customerId": 204,
+            "rate": 20.00,
+            "qty": 1,
+            "weight": 25.0,
+            "bagRate": 15.00,
+            "bagWeight": 0.0,
+            "commission": 34.00,
+            "amount": 500.00,
+            "netAmount": 549.00
+        }
+    ],
+    "billSummary": {
+        "totalQty": 5,
+        "totalBagWeight": 0.0,
+        "totalWeight": 105.0,
+        "totalAmount": 2100.00,
+        "totalNetAmount": 2325.00
+    }
+}
