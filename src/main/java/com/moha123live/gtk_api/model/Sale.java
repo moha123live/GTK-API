@@ -1,6 +1,7 @@
 package com.moha123live.gtk_api.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -33,11 +34,14 @@ public class Sale {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer sale_id;
+    private Integer saleId;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pur_id", nullable = false)
     private Purchase purchase;
+
+    @Column(nullable = false)
+    private LocalDate date;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "cus_id", nullable = false)
@@ -58,6 +62,9 @@ public class Sale {
     @Builder.Default
     @Column(precision = 6, scale = 2)
     private BigDecimal commission = BigDecimal.ZERO;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal rate;
 
     @Column(nullable = false, precision = 10, scale = 2)
     private BigDecimal amount;

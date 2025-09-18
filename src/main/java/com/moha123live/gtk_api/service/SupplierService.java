@@ -43,7 +43,7 @@ public class SupplierService {
     }
 
     public SupplierResponseDto updateSupplier(SupplierRequestDto request,Integer id) {
-        supplierRepository.findById(id).orElseThrow(() -> new NoSuchElementException(AppMessages.PRODUCT_NOT_FOUND));
+        supplierRepository.findById(id).orElseThrow(() -> new NoSuchElementException(AppMessages.SUPPLIER_NOT_FOUND));
         Supplier supplier = SupplierMapper.toEntity(request);
         supplier.setSupId(id);
         Supplier data = supplierRepository.save(supplier);
@@ -69,12 +69,12 @@ public class SupplierService {
     public List<SupplierResponseDto> createAllSuppliers(List<SupplierRequestDto> requests) {
         List<Supplier> suppliersToSave = new ArrayList<>();
         for (SupplierRequestDto request : requests) {
-            if (supplierRepository.existsByNameIgnoreCase(request.getName())) {
+            Supplier supplier = SupplierMapper.toEntity(request);
+            if (supplierRepository.existsByNameIgnoreCase(supplier.getName())) {
                 throw new IllegalArgumentException(
-                        request.getName() + " - " + AppMessages.SUPPLIER_ALREADY_EXISTS
+                        supplier.getName() + " - " + AppMessages.SUPPLIER_ALREADY_EXISTS
                 );
             }
-            Supplier supplier = SupplierMapper.toEntity(request);
             suppliersToSave.add(supplier);
         }
         List<Supplier> savedSuppliers = supplierRepository.saveAll(suppliersToSave);

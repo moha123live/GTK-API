@@ -70,6 +70,7 @@ public class AppMessages {
     public static final String CUSTOMER_DISABLED = "Customer disabled successfully";
     public static final String CUSTOMER_ALREADY_EXISTS = "Customer name already exists";
     public static final String CUSTOMER_NOT_FOUND = "Customer not found";
+    public static final String CUSTOMER_ID_NOT_FOUND = "Customer not found";
 
     // --- Supplier Messages ---
     public static final String SUPPLIER_CREATED = "Supplier created successfully";
@@ -82,6 +83,7 @@ public class AppMessages {
     public static final String SUPPLIER_DISABLED = "Supplier disabled successfully";
     public static final String SUPPLIER_ALREADY_EXISTS = "Supplier name already exists";
     public static final String SUPPLIER_NOT_FOUND = "Supplier not found";
+    public static final String SUPPLIER_ID_NOT_FOUND = "Supplier id not found";
 
     // --- Product Messages ---
     public static final String PRODUCT_CREATED = "Product created successfully";
@@ -94,12 +96,36 @@ public class AppMessages {
     public static final String PRODUCT_DISABLED = "Product disabled successfully";
     public static final String PRODUCT_ALREADY_EXISTS = "Product name already exists";
     public static final String PRODUCT_NOT_FOUND = "Product not found";
+    public static final String PRODUCT_ID_NOT_FOUND = "Product id not found";
 
     // --- Billing Messages ---
-    public static final String BILLING_ADDED = "Billing saved successfully";
-    public static final String BILLING_UPDATED = "Billing updated successfully";
-    public static final String BILLING_DELETED = "Billing deleted successfully";
-    public static final String BILLING_NOT_FOUND = "Billing not found";
+    public static final String BILL_ADDED = "Bill saved successfully";
+    public static final String BILL_UPDATED = "Bill updated successfully";
+    public static final String BILL_DELETED = "Bill deleted successfully";
+    public static final String BILL_NOT_FOUND = "Bill not found";
+    
+    //--- Purchase Validation Message ---
+    public static final String PURCHASE_BILL_LENGTH = "Purchase bill number must not exceed 10 characters";
+    public static final String PURCHASE_DATE_REQUIRED = "Date is required";
+    public static final String PURCHASE_RATE_REQUIRED = "Purchase Rate is required";
+    public static final String PURCHASE_RATE_LENGTH = "Purchase rate must be greater than 0";
+    public static final String PURCHASE_QUANTITY_REQUIRED = "Purchase quantity is required";
+    public static final String PURCHASE_ATLEAST_QUANITY = "Purchase quantity must be at least 1";
+    public static final String PURCHASE_WEIGHT = "Purchase weight is required";
+    public static final String PURCHASE_AMOUNT = "Purchase amount is required";
+
+    //--- Sales Validation Message ---
+    public static final String SALE_DATE_REQUIRED = "Date is required";;
+    public static final String SALE_RATE_REQUIRED = "Sale Rate is required";;
+    public static final String SALE_RATE_LENGTH = "Sale rate must be greater than 0";;
+    public static final String SALE_BAG_RATE = "Sale bag rate must be greater than 0";;
+    public static final String SALE_QUANTITY_REQUIRED = "Sale quantity is required";;
+    public static final String SALE_WEIGHT = "Sale weight is required";;
+    public static final String SALE_AMOUNT_REQUIRED = "Sale amount is required";
+    public static final String SALE_AMOUNT_LENGTH = "Sale amount must be greater than 0";
+    public static final String SALE_NETAMOUNT_REQUIRED = "Sale netamount is required";
+    public static final String SALE_NETAMOUNT_LENGTH = "Sale netamount must be greater than 0";
+    public static final String SALE_COMMISSION_NONNEGATIVE ="Commission cannot be negative";
 
     // --- Customer Validation Messages ---
     public static final String CUSTOMER_NAME_REQUIRED = "Customer name is mandatory";
@@ -119,6 +145,13 @@ public class AppMessages {
     public static final String SUPPLIER_CITY_LENGTH = "City name must not exceed 100 characters";
     public static final String SUPPLIER_PHONE_PATTERN = "Phone number must consist of exactly 10 numeric digits";
     public static final String SUPPLIER_BALANCE_DUE_GREATER_THAN_ZERO = "Old balance must be greater than or equal to 0.00";
+
+    // --- Product Validation Messages ---
+    public static final String PRODUCT_NAME_REQUIRED = "Product name is mandatory";
+    public static final String PRODUCT_NAME_LENGTH = "Product name must not exceed 100 characters";
+    public static final String PRODUCT_TAMIL_NAME_LENGTH = "Product tamil name must not exceed 100 characters";
+    public static final String PRODUCT_UNIT_REQUIRED = "Unit is required";
+    public static final String PRODUCT_COMMISSION_GREATER_THAN_ZERO = "Commission value must be greater than or equal to 0.00";
 
     // --- User Validation Messages ---
     public static final String USER_USERNAME_REQUIRED = "Username is required";
