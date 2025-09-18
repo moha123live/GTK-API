@@ -44,7 +44,7 @@ public class Purchase {
     @JoinColumn(name = "product_id", nullable = false)
     private Product product;
 
-    @Column(length = 10)
+    @Column(length = 25)
     private String billNo;
 
     @Column(nullable = false)

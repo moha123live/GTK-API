@@ -16,7 +16,7 @@ public class BillSummaryRequestDto {
     private Integer totalQty;
 
     @NotNull(message = AppMessages.BillSUMMARY_BAGWEIGHT_REQUIRED)
-    @DecimalMin(value = "0.0", inclusive = false, message = AppMessages.BillSUMMARY_BAGWEIGHT_GREATER_THAN_ZERO)
+    @DecimalMin(value = "0.0", inclusive = true, message = AppMessages.BillSUMMARY_BAGWEIGHT_GREATER_OR_EQUAL_ZERO)
     private BigDecimal totalBagWeight;
 
     @NotNull(message = AppMessages.BillSUMMARY_WEIGHT_REQUIRED)

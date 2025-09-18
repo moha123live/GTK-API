@@ -70,7 +70,7 @@ public class AppMessages {
     public static final String CUSTOMER_DISABLED = "Customer disabled successfully";
     public static final String CUSTOMER_ALREADY_EXISTS = "Customer name already exists";
     public static final String CUSTOMER_NOT_FOUND = "Customer not found";
-    public static final String CUSTOMER_ID_NOT_FOUND = "Customer not found";
+    public static final String CUSTOMER_ID_REQUIRED = "Customer ID is required";
 
     // --- Supplier Messages ---
     public static final String SUPPLIER_CREATED = "Supplier created successfully";
@@ -106,27 +106,32 @@ public class AppMessages {
 
     // --- Purchase Validation Message ---
     public static final String PURCHASE_REQUIRED = "Purchase is required";
-    public static final String PURCHASE_BILL_LENGTH = "Purchase bill number must not exceed 10 characters";
-    public static final String PURCHASE_DATE_REQUIRED = "Date is required";
-    public static final String PURCHASE_RATE_REQUIRED = "Purchase Rate is required";
-    public static final String PURCHASE_RATE_LENGTH = "Purchase rate must be greater than 0";
+    public static final String PURCHASE_BILL_LENGTH = "Purchase bill number must not exceed 25 characters";
+    public static final String PURCHASE_BILL_NO_MAX_LENGTH = "Bill number must not exceed 25 characters";
+    public static final String PURCHASE_DATE_REQUIRED = "Purchase date is required";
+    public static final String PURCHASE_RATE_REQUIRED = "Purchase rate is required";
+    public static final String PURCHASE_RATE_POSITIVE = "Purchase rate must be greater than 0";
     public static final String PURCHASE_QUANTITY_REQUIRED = "Purchase quantity is required";
-    public static final String PURCHASE_ATLEAST_QUANITY = "Purchase quantity must be at least 1";
-    public static final String PURCHASE_WEIGHT = "Purchase weight is required";
-    public static final String PURCHASE_AMOUNT = "Purchase amount is required";
+    public static final String PURCHASE_QUANTITY_MIN = "Purchase quantity must be at least 1";
+    public static final String PURCHASE_WEIGHT_REQUIRED = "Purchase weight is required";
+    public static final String PURCHASE_WEIGHT_POSITIVE = "Purchase weight must be greater than 0";
+    public static final String PURCHASE_AMOUNT_REQUIRED = "Purchase amount is required";
+    public static final String PURCHASE_AMOUNT_POSITIVE = "Purchase amount must be greater than 0";
 
     // --- Sales Validation Message ---
-    public static final String SALE_DATE_REQUIRED = "Date is required";;
-    public static final String SALE_RATE_REQUIRED = "Sale Rate is required";;
-    public static final String SALE_RATE_LENGTH = "Sale rate must be greater than 0";;
-    public static final String SALE_BAG_RATE = "Sale bag rate must be greater than 0";;
-    public static final String SALE_QUANTITY_REQUIRED = "Sale quantity is required";;
-    public static final String SALE_WEIGHT = "Sale weight is required";;
+    public static final String SALE_QUANTITY_REQUIRED = "Sale quantity is required";
+    public static final String SALE_QUANTITY_MIN = "Sale quantity must be at least 1";
+    public static final String SALE_WEIGHT_REQUIRED = "Sale weight is required";
+    public static final String SALE_WEIGHT_POSITIVE = "Sale weight must be greater than 0";
+    public static final String SALE_BAG_RATE_POSITIVE = "Sale bag rate must be greater than 0";
+    public static final String SALE_RATE_REQUIRED = "Sale rate is required";
+    public static final String SALE_RATE_POSITIVE = "Sale rate must be greater than 0";
     public static final String SALE_AMOUNT_REQUIRED = "Sale amount is required";
-    public static final String SALE_AMOUNT_LENGTH = "Sale amount must be greater than 0";
-    public static final String SALE_NETAMOUNT_REQUIRED = "Sale netamount is required";
-    public static final String SALE_NETAMOUNT_LENGTH = "Sale netamount must be greater than 0";
-    public static final String SALE_COMMISSION_NONNEGATIVE = "Commission cannot be negative";
+    public static final String SALE_AMOUNT_POSITIVE = "Sale amount must be greater than 0";
+    public static final String SALE_NET_AMOUNT_REQUIRED = "Sale net amount is required";
+    public static final String SALE_NET_AMOUNT_POSITIVE = "Sale net amount must be greater than 0";
+    public static final String SALE_COMMISSION_POSITIVE = "Commission should be positive value";
+
 
     // --- Customer Validation Messages ---
     public static final String CUSTOMER_NAME_REQUIRED = "Customer name is mandatory";
@@ -169,7 +174,7 @@ public class AppMessages {
     public static final String BillSUMMARY_QUANTITY_REQUIRED = "Total quantity is required";
     public static final String BillSUMMARY_QUANTITY_GREATER_THAN_ZERO = "Total quantity must be greater than 0";
     public static final String BillSUMMARY_BAGWEIGHT_REQUIRED = "Total bag weight is required";
-    public static final String BillSUMMARY_BAGWEIGHT_GREATER_THAN_ZERO = "Total bag weight must be greater than 0";
+    public static final String BillSUMMARY_BAGWEIGHT_GREATER_OR_EQUAL_ZERO = "Total bag weight must be greater than or equal to 0";
     public static final String BillSUMMARY_WEIGHT_REQUIRED = "Total weight is required";
     public static final String BillSUMMARY_WEIGHT_GREATER_THAN_ZERO = "Total weight must be greater than 0";
     public static final String BillSUMMARY_AMOUNT_REQUIRED = "Total amount is required";

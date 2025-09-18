@@ -20,7 +20,6 @@ public class TransactionMapper {
                 .purchase(PurchaseMapper.toResponseDto(purchase))
                 .sales(sales.stream().map(SaleMapper::toResponseDto).collect(Collectors.toList()))
                 .billSummary(BillSummaryMapper.toResponseDto(billSummary))
-                .ledgers(ledgers.stream().map(LedgerMapper::toResponseDto).collect(Collectors.toList()))
                 .build();
     }
 }

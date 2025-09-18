@@ -82,6 +82,6 @@ public class Sale {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "updated_by")
-    private Integer updatedBy;
+    private User updatedBy;
 
 }

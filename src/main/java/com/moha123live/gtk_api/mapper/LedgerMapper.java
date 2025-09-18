@@ -31,7 +31,7 @@ public class LedgerMapper {
                 .referenceType(Ledger.ReferenceType.SALE)
                 .date(sale.getDate())
                 .debit(BigDecimal.ZERO)
-                .credit(sale.getAmount())
+                .credit(sale.getNetAmount())
                 .oldBalance(BigDecimal.ZERO)
                 .newBalance(sale.getAmount())
                 .build();

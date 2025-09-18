@@ -36,7 +36,9 @@ public class PurchaseMapper {
                 .qty(res.getQty())
                 .weight(res.getWeight())
                 .amount(res.getAmount())
+                .supplierId(res.getSupplier().getSupId())
                 .supplierName(res.getSupplier().getName())
+                .productId(res.getProduct().getProdId())
                 .productName(res.getProduct().getName())
                 .build();
     }

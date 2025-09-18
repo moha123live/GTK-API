@@ -1,9 +1,9 @@
 {
-    "productId": 1,
-    "supId": 101,
-    "billNo": "BILL-2025-01",
-    "date": "2025-09-17T10:30:00",
     "purchase": {
+        "productId": 1,
+        "supId": 1,
+        "billNo": "BILL-2025-01",
+        "date": "2025-09-17T10:30:00",
         "rate": 20,
         "qty": 2,
         "weight": 105.0,
@@ -11,7 +11,7 @@
     },
     "sales": [
         {
-            "customerId": 201,
+            "custId": 1,
             "rate": 20.00,
             "qty": 1,
             "weight": 20.0,
@@ -22,7 +22,7 @@
             "netAmount": 449.00
         },
         {
-            "customerId": 202,
+            "custId": 2,
             "rate": 20.00,
             "qty": 1,
             "weight": 20.0,
@@ -33,7 +33,7 @@
             "netAmount": 449.00
         },
         {
-            "customerId": 203,
+            "custId": 3,
             "rate": 20.00,
             "qty": 2,
             "weight": 40.0,
@@ -44,7 +44,7 @@
             "netAmount": 878.00
         },
         {
-            "customerId": 204,
+            "custId": 4,
             "rate": 20.00,
             "qty": 1,
             "weight": 25.0,

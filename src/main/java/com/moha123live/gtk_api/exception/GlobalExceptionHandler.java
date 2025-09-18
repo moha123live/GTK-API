@@ -32,7 +32,7 @@ public class GlobalExceptionHandler {
         if(ex instanceof MethodArgumentNotValidException){
             MethodArgumentNotValidException validationEx = (MethodArgumentNotValidException) ex;
             message = validationEx.getBindingResult().getFieldErrors().stream()
-                    .map(err -> err.getField() + ": " + err.getDefaultMessage())
+                    .map(err -> err.getDefaultMessage())
                     .collect(Collectors.joining(", "));
 
         }
