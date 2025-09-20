@@ -17,6 +17,4 @@ public class LedgerResponseDto {
     private LocalDate date;
     private BigDecimal debit;
     private BigDecimal credit;
-    private BigDecimal oldBalance;
-    private BigDecimal newBalance;
 }

@@ -16,10 +16,8 @@ public class LedgerMapper {
                 .referenceId(purchase.getPurId())
                 .referenceType(Ledger.ReferenceType.PURCHASE)
                 .date(purchase.getDate())
-                .debit(purchase.getAmount())
-                .credit(BigDecimal.ZERO)
-                .oldBalance(BigDecimal.ZERO)
-                .newBalance(purchase.getAmount())
+                .debit(BigDecimal.ZERO)
+                .credit(purchase.getAmount())
                 .build();
     }
 
@@ -30,10 +28,8 @@ public class LedgerMapper {
                 .referenceId(sale.getSaleId())
                 .referenceType(Ledger.ReferenceType.SALE)
                 .date(sale.getDate())
-                .debit(BigDecimal.ZERO)
-                .credit(sale.getNetAmount())
-                .oldBalance(BigDecimal.ZERO)
-                .newBalance(sale.getAmount())
+                .debit(sale.getNetAmount())
+                .credit(BigDecimal.ZERO)
                 .build();
     }
 
@@ -47,8 +43,6 @@ public class LedgerMapper {
                 .date(ledger.getDate())
                 .debit(ledger.getDebit())
                 .credit(ledger.getCredit())
-                .oldBalance(ledger.getOldBalance())
-                .newBalance(ledger.getNewBalance())
                 .build();
     }
 }

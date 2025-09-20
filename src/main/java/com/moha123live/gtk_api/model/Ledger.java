@@ -47,12 +47,6 @@ public class Ledger {
     @Column(precision = 10, scale = 2)
     private BigDecimal credit = BigDecimal.ZERO;
 
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal oldBalance;
-
-    @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal newBalance;
-
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "updated_by")
     private User updatedBy;

@@ -13,8 +13,7 @@ public class TransactionMapper {
     public static TransactionResponseDto toResponseDto(
             Purchase purchase,
             List<Sale> sales,
-            BillSummary billSummary,
-            List<Ledger> ledgers
+            BillSummary billSummary
     ) {
         return TransactionResponseDto.builder()
                 .purchase(PurchaseMapper.toResponseDto(purchase))
