@@ -9,8 +9,8 @@ import java.time.LocalDate;
 @Builder
 public class PurchaseResponseDto {
     private Integer id;
-    private Integer supplierId;
-    private String supplierName;
+    private Integer supId;
+    private String supName;
     private Integer productId;
     private String productName;
     private String billNo;

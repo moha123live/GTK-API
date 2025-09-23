@@ -7,5 +7,6 @@ import com.moha123live.gtk_api.model.BillSummary;
 
 @Repository
 public interface BillSummaryRepository extends JpaRepository<BillSummary, Integer>{
-    
+    void deleteByPurchase_PurId(Integer id);
+    BillSummary findByPurchase_PurId(Integer id);
 }

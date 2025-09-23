@@ -4,8 +4,17 @@ import com.moha123live.gtk_api.dto.requestDto.TransactionRequestDto;
 import com.moha123live.gtk_api.dto.responseDto.TransactionResponseDto;
 
 public interface TransactionService {
+
     TransactionResponseDto createTransaction(TransactionRequestDto request);
-//     TransactionResponseDto update(Long purchaseId, TransactionRequestDto request);
-//     void delete(Long purchaseId);
-//     TransactionResponseDto getById(Long purchaseId);
+
+    TransactionResponseDto updateTransaction(Integer id, TransactionRequestDto request);
+
+    void deleteTransaction(Integer id);
+
+    TransactionResponseDto getTransactionById(Integer id);
+
+    TransactionResponseDto getTransactionBySearch(TransactionRequestDto.Search request);
+
+    TransactionResponseDto getTransactionBySearchBillNo(TransactionRequestDto.SearchBillNo request);
+    
 }

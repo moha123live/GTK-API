@@ -14,5 +14,5 @@ import com.moha123live.gtk_api.model.Ledger.ReferenceType;
 public interface LedgerRepository extends JpaRepository<Ledger, Integer>{
 
     Optional<Ledger> findByDateAndReferenceTypeAndEntityTypeAndEntityId(LocalDate atStartOfDay, ReferenceType purchase, EntityType supplier,
-            Integer supId);   
+            Integer supId);
 }

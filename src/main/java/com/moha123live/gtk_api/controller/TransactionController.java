@@ -25,4 +25,34 @@ public class TransactionController {
         TransactionResponseDto response = transactionService.createTransaction(request);
         return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.BILL_ADDED, response));
     }
+
+    @PutMapping("/purchase-bill/{id}")
+    public ResponseEntity<ApiResponse<TransactionResponseDto>> updateTransaction(@PathVariable Integer id, @Valid @RequestBody TransactionRequestDto request) {
+        TransactionResponseDto response = transactionService.updateTransaction(id, request);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.BILL_UPDATED, response));
+    }
+
+    @DeleteMapping("/purchase-bill/{id}")
+    public ResponseEntity<ApiResponse<TransactionResponseDto>> updateTransaction(@PathVariable Integer id) {
+        transactionService.deleteTransaction(id);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.BILL_DELETED, null));
+    }
+
+    @GetMapping("/purchase-bill/{id}")
+    public ResponseEntity<ApiResponse<TransactionResponseDto>> getTransactionById(@PathVariable Integer id) {
+        TransactionResponseDto response = transactionService.getTransactionById(id);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.BILL_FETCHED, response));
+    }
+
+    @GetMapping("/purchase-bill/search")
+    public ResponseEntity<ApiResponse<TransactionResponseDto>> getTransactionBySearch(@Valid @RequestBody TransactionRequestDto.Search request) {
+        TransactionResponseDto response = transactionService.getTransactionBySearch(request);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.BILL_FETCHED, response));
+    }
+
+    @GetMapping("/purchase-bill/searchBillNo")
+    public ResponseEntity<ApiResponse<TransactionResponseDto>> getTransactionBySearchBillNo(@Valid @RequestBody TransactionRequestDto.SearchBillNo request) {
+        TransactionResponseDto response = transactionService.getTransactionBySearchBillNo(request);
+        return ResponseEntity.ok(ApiResponseUtil.success(AppMessages.BILL_FETCHED, response));
+    }
 }

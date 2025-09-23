@@ -30,8 +30,6 @@ public class Ledger {
     @Column(nullable = false)
     private Integer entityId; // FK to Customer.cusId or Supplier.supId
 
-    private Integer referenceId; // Nullable
-
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 30)
     private ReferenceType referenceType;

@@ -102,10 +102,15 @@ public class AppMessages {
     public static final String BILL_ADDED = "Bill saved successfully";
     public static final String BILL_UPDATED = "Bill updated successfully";
     public static final String BILL_DELETED = "Bill deleted successfully";
+    public static final String BILL_FETCHED = "Bill fetched successfully";
     public static final String BILL_NOT_FOUND = "Bill not found";
+    public static final String BILL_ID_REQUIRED = "Bill id is required";
 
     // --- Purchase Validation Message ---
     public static final String PURCHASE_REQUIRED = "Purchase is required";
+    public static final String PURCHASE_NOT_FOUND = "Purchase not found";
+    public static final String PURCHASE_ID_REQUIRED = "Purchase Id is required";
+    public static final String PURCHASE_BILLNO_REQUIRED = "Purchase bill number is required";
     public static final String PURCHASE_BILL_LENGTH = "Purchase bill number must not exceed 25 characters";
     public static final String PURCHASE_BILL_NO_MAX_LENGTH = "Bill number must not exceed 25 characters";
     public static final String PURCHASE_DATE_REQUIRED = "Purchase date is required";
@@ -120,6 +125,7 @@ public class AppMessages {
 
     // --- Sales Validation Message ---
     public static final String SALE_QUANTITY_REQUIRED = "Sale quantity is required";
+    public static final String SALE_NOT_FOUND = "Sale not found";
     public static final String SALE_QUANTITY_MIN = "Sale quantity must be at least 1";
     public static final String SALE_WEIGHT_REQUIRED = "Sale weight is required";
     public static final String SALE_WEIGHT_POSITIVE = "Sale weight must be greater than 0";
@@ -145,6 +151,7 @@ public class AppMessages {
     public static final String CUSTOMER_COMMISSION_GREATER_THAN_ZERO = "Commission value must be greater than or equal to 0.00";
 
     // --- Supplier Validation Messages ---
+    public static final String SUPPLIER_ID_REQUIRED = "Supplier ID is required";
     public static final String SUPPLIER_NAME_REQUIRED = "Supplier name is mandatory";
     public static final String SUPPLIER_NAME_LENGTH = "Supplier name must not exceed 100 characters";
     public static final String SUPPLIER_ADDRESS_LENGTH = "Address must not exceed 255 characters";
@@ -153,6 +160,7 @@ public class AppMessages {
     public static final String SUPPLIER_BALANCE_DUE_GREATER_THAN_ZERO = "Old balance must be greater than or equal to 0.00";
 
     // --- Product Validation Messages ---
+    public static final String PRODUCT_ID_REQUIRED = "Product ID is required";
     public static final String PRODUCT_NAME_REQUIRED = "Product name is mandatory";
     public static final String PRODUCT_NAME_LENGTH = "Product name must not exceed 100 characters";
     public static final String PRODUCT_TAMIL_NAME_LENGTH = "Product tamil name must not exceed 100 characters";

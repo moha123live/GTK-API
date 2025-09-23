@@ -17,8 +17,6 @@ public class LedgerRequestDto {
     @NotNull(message = AppMessages.LEDGER_ENTITY_ID_REQUIRED)
     private Integer entityId;
 
-    private Long referenceId;
-
     @NotNull(message = AppMessages.LEDGER_REFERENCE_TYPE_REQUIRED)
     private String referenceType;
 

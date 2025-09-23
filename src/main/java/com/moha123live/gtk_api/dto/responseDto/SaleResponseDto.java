@@ -10,8 +10,8 @@ import java.time.LocalDate;
 public class SaleResponseDto {
     private Integer saleId;
     private LocalDate date;
-    private Integer customerId;
-    private String customerName;
+    private Integer custId;
+    private String custName;
     private Integer qty;
     private BigDecimal bagWeight;
     private BigDecimal weight;

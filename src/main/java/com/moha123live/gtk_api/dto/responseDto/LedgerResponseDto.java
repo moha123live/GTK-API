@@ -12,7 +12,6 @@ public class LedgerResponseDto {
     private Integer id;
     private String entityType;
     private Integer entityId;
-    private Integer referenceId;
     private String referenceType;
     private LocalDate date;
     private BigDecimal debit;
