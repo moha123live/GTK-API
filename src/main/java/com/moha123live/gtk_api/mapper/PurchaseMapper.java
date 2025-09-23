@@ -38,7 +38,7 @@ public class PurchaseMapper {
                 .amount(res.getAmount())
                 .supId(res.getSupplier().getSupId())
                 .supName(res.getSupplier().getName())
-                .productId(res.getProduct().getProdId())
+                .productId(res.getProduct().getProductId())
                 .productName(res.getProduct().getName())
                 .build();
     }

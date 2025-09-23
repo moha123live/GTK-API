@@ -45,7 +45,7 @@ public class ProductService {
     public ProductResponseDto updateProduct(ProductRequestDto request,Integer id) {
         productRepository.findById(id).orElseThrow(() -> new NoSuchElementException(AppMessages.PRODUCT_NOT_FOUND));
         Product product = ProductMapper.toEntity(request);
-        product.setProdId(id);
+        product.setProductId(id);
         Product data = productRepository.save(product);
         return ProductMapper.toResponseDto(data);
     }

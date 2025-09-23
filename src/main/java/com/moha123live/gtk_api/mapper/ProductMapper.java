@@ -26,7 +26,7 @@ public class ProductMapper {
     public static ProductResponseDto toResponseDto(Product res) {
         if (res == null) return null;
         return ProductResponseDto.builder()
-                .id(res.getProdId())
+                .id(res.getProductId())
                 .name(res.getName())
                 .tamilName(res.getTamilName())
                 .unit(res.getUnit().name())

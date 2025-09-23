@@ -32,7 +32,7 @@ import lombok.NoArgsConstructor;
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer prodId;
+    private Integer productId;
 
     @Column(nullable = false, length = 100)
     private String name;
