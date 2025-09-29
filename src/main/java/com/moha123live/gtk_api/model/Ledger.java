@@ -3,6 +3,7 @@ package com.moha123live.gtk_api.model;
 import jakarta.persistence.*;
 import lombok.*;
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
@@ -21,7 +22,7 @@ public class Ledger {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer ledId;
+    private BigInteger ledId;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 10)

@@ -1,7 +1,7 @@
 package com.moha123live.gtk_api.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -34,7 +34,7 @@ public class SaleItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer saleitemId;
+    private BigInteger saleitemId;
     
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "bill_id", nullable = false)
