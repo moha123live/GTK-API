@@ -10,7 +10,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 public class UserRequestDto {
 
     @Data
@@ -33,7 +32,6 @@ public class UserRequestDto {
         private User.Status status;
     }
 
-
     @Data
     @NoArgsConstructor
     @AllArgsConstructor
@@ -54,4 +52,3 @@ public class UserRequestDto {
     }
 
 }
-

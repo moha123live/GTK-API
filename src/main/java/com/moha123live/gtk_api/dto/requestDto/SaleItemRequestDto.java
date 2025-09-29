@@ -4,34 +4,40 @@ import jakarta.validation.constraints.*;
 import lombok.Data;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 import com.moha123live.gtk_api.util.AppMessages;
 
 @Data
-public class SaleRequestDto {
+public class SaleItemRequestDto {
 
-    
-    @NotNull(message = AppMessages.CUSTOMER_ID_REQUIRED)
-    private Integer custId;
-    
-    private LocalDate billDate;
+    @NotNull(message = AppMessages.PRODUCT_ID_NOT_FOUND)
+    private Integer prodId;
 
     @NotNull(message = AppMessages.SALE_QUANTITY_REQUIRED)
     @Min(value = 1, message = AppMessages.SALE_QUANTITY_MIN)
-    private Integer totalQty;
+    private Integer qty;
 
-    private BigDecimal totalBagWeight;
+    private BigDecimal bagWeight;
 
     @NotNull(message = AppMessages.SALE_WEIGHT_REQUIRED)
     @DecimalMin(value = "0.01", inclusive = true, message = AppMessages.SALE_WEIGHT_POSITIVE)
-    private BigDecimal totalWeight;
+    private BigDecimal weight;
+
+    @DecimalMin(value = "0.01", inclusive = true, message = AppMessages.SALE_BAG_RATE_POSITIVE)
+    private BigDecimal bagRate;
+
+    @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.SALE_COMMISSION_POSITIVE)
+    private BigDecimal commission = BigDecimal.ZERO;
+
+    @NotNull(message = AppMessages.SALE_RATE_REQUIRED)
+    @DecimalMin(value = "0.01", inclusive = true, message = AppMessages.SALE_RATE_POSITIVE)
+    private BigDecimal rate;
 
     @NotNull(message = AppMessages.SALE_AMOUNT_REQUIRED)
     @DecimalMin(value = "0.01", inclusive = true, message = AppMessages.SALE_AMOUNT_POSITIVE)
-    private BigDecimal totalAmount;
+    private BigDecimal amount;
 
     @NotNull(message = AppMessages.SALE_NET_AMOUNT_REQUIRED)
     @DecimalMin(value = "0.01", inclusive = true, message = AppMessages.SALE_NET_AMOUNT_POSITIVE)
-    private BigDecimal totalNetAmount;
+    private BigDecimal netAmount;
 }

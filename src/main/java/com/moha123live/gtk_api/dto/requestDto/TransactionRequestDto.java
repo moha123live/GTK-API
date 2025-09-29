@@ -33,7 +33,7 @@ public class TransactionRequestDto {
         private Integer supId;
 
         @NotNull(message = AppMessages.PRODUCT_ID_REQUIRED)
-        private Integer productId;
+        private Integer prodId;
 
     }
 
@@ -47,7 +47,7 @@ public class TransactionRequestDto {
         private String billNo;
 
         @NotNull(message = AppMessages.PRODUCT_ID_REQUIRED)
-        private Integer productId;
+        private Integer prodId;
 
     }
 }

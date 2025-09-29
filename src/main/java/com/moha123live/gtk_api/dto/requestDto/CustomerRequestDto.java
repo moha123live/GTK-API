@@ -26,13 +26,13 @@ public class CustomerRequestDto {
         private String phone;
 
         @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.CUSTOMER_OLDBALANCE_GREATER_THAN_ZERO)
-        private BigDecimal oldBalance;
+        private BigDecimal openingBalance;
 
         @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.CUSTOMER_CURRBALANCE_GREATER_THAN_ZERO)
-        private BigDecimal currBalance;
+        private BigDecimal currentBalance;
 
         @DecimalMin(value = "0.00", inclusive = true, message = AppMessages.CUSTOMER_COMMISSION_GREATER_THAN_ZERO)
-        private BigDecimal comm1;
+        private BigDecimal cusCommission;
 
         private Customer.Status status;
 

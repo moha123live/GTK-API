@@ -11,6 +11,7 @@ import lombok.Data;
 
 @Data
 public class SupplierRequestDto {
+    
     @NotBlank(message = AppMessages.SUPPLIER_NAME_REQUIRED)
     @Size(max = 100, message = AppMessages.SUPPLIER_NAME_LENGTH)
     private String name;
