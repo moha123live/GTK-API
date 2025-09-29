@@ -8,8 +8,9 @@ import org.springframework.stereotype.Repository;
 import com.moha123live.gtk_api.model.Product;
 
 @Repository
-public interface ProductRepository extends JpaRepository<Product, Integer>{
+public interface ProductRepository extends JpaRepository<Product, Integer> {
     List<Product> findByNameContainingIgnoreCase(String name);
+
     boolean existsByNameIgnoreCase(String name);
-    
+
 }

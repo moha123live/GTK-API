@@ -9,6 +9,7 @@ import com.moha123live.gtk_api.model.Sale;
 public interface SaleRepository extends JpaRepository<Sale, Integer> {
 
     List<Sale> findByPurchase_PurId(Integer id);
+
     void deleteByPurchase_PurId(Integer id);
 
 }

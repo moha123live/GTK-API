@@ -1,5 +1,6 @@
 package com.moha123live.gtk_api.repository;
 
+import java.math.BigInteger;
 import java.time.LocalDate;
 import java.util.Optional;
 
@@ -11,7 +12,7 @@ import com.moha123live.gtk_api.model.Ledger.EntityType;
 import com.moha123live.gtk_api.model.Ledger.ReferenceType;
 
 @Repository
-public interface LedgerRepository extends JpaRepository<Ledger, Integer>{
+public interface LedgerRepository extends JpaRepository<Ledger, BigInteger>{
 
     Optional<Ledger> findByDateAndReferenceTypeAndEntityTypeAndEntityId(LocalDate atStartOfDay, ReferenceType purchase, EntityType supplier,
             Integer supId);
