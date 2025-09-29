@@ -1,6 +1,7 @@
 package com.moha123live.gtk_api.model;
 
 import java.math.BigDecimal;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -37,10 +38,9 @@ public class BillSummary {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer billId;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name="pur_id", nullable = false)
-    private Purchase purchase;
-    
+    @Column(nullable = false)
+    private LocalDate billDate;
+
     @Column(length = 8, nullable = false)
     private Integer totalQty;
 

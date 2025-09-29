@@ -51,15 +51,15 @@ public class Customer {
 
     @Builder.Default
     @Column(precision = 10, scale = 2)
-    private BigDecimal oldBalance = BigDecimal.ZERO;
+    private BigDecimal openingBalance = BigDecimal.ZERO;
 
     @Builder.Default
     @Column(precision = 10, scale = 2)
-    private BigDecimal currBalance = BigDecimal.ZERO;
+    private BigDecimal currentBalance = BigDecimal.ZERO;
 
     @Builder.Default
     @Column(precision = 10, scale = 2)
-    private BigDecimal comm1 = BigDecimal.ZERO;
+    private BigDecimal custCommission = BigDecimal.ZERO;
 
     @Builder.Default
     @Enumerated(EnumType.STRING)

@@ -1,7 +1,6 @@
 package com.moha123live.gtk_api.model;
 
 import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.springframework.data.annotation.CreatedDate;
@@ -24,60 +23,51 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "sales")
+@Table(name = "purchase_items")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder
 @EntityListeners(AuditingEntityListener.class)
-public class Sale {
-
+@Builder
+public class PurchaseItem {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer saleId;
-    
+    private Integer puritemId;
+
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "cus_id", nullable = false)
-    private Customer customer;
+    @JoinColumn(name = "bill_id", nullable = false)
+    private BillSummary billing;
 
-    @Column(nullable = false)
-    private LocalDate billDate;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "pur_id", nullable = false)
+    private Purchase purchase;
 
-    @Column(length = 8, nullable = false)
-    private Integer totalQty;
-
-    @Column(precision = 6, scale = 1)
-    private BigDecimal totalBagWeight;
-
-    @Column(nullable = false, precision = 6, scale = 1)
-    private BigDecimal totalWeight;
-    
-    // @Column(precision = 6, scale = 2)
-    // private BigDecimal bagRate;
-
-    // @Builder.Default
-    // @Column(precision = 6, scale = 2)
-    // private BigDecimal commission = BigDecimal.ZERO;
-
-    // @Column(nullable = false, precision = 10, scale = 2)
-    // private BigDecimal rate;
-
-    // @Column(nullable = false, precision = 10, scale = 2)
-    // private BigDecimal amount;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "prod_id", nullable = false)
+    private Product product;
 
     @Column(nullable = false, precision = 10, scale = 2)
-    private BigDecimal totalNetAmount;
+    private BigDecimal rate;
+
+    @Column(length = 8, nullable = false)
+    private Integer qty;
+
+    @Column(nullable = false, precision = 6, scale = 1)
+    private BigDecimal weight;
+
+    @Column(nullable = false, precision = 10, scale = 2)
+    private BigDecimal amount;
 
     @CreatedDate
     @Column(updatable = false)
     private LocalDateTime createdAt;
 
     @LastModifiedDate
-    @Column(nullable = false)
     private LocalDateTime updatedAt;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "updated_by")
     private User updatedBy;
-
+    
 }

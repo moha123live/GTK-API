@@ -30,9 +30,10 @@ import lombok.NoArgsConstructor;
 @EntityListeners(AuditingEntityListener.class)
 @Builder
 public class Product {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer productId;
+    private Integer prodId;
 
     @Column(nullable = false, length = 100)
     private String name;
@@ -43,10 +44,6 @@ public class Product {
     @Enumerated(EnumType.STRING)
     @Column(nullable = false, length = 5)
     private Unit unit;
-
-    @Builder.Default
-    @Column(precision = 10, scale = 2)
-    private BigDecimal comm2 = BigDecimal.ZERO;
 
     @Builder.Default
     @Enumerated(EnumType.STRING)
@@ -63,11 +60,10 @@ public class Product {
 
     @LastModifiedDate
     private LocalDateTime updatedAt;
-
+    
     public enum Unit {
         KG, GRAM, BAG, PIECE, PACK, DOZEN, LTR, ML
     }
-
     public enum Status {
         ACTIVE, INACTIVE
     }
